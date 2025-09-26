@@ -19,6 +19,80 @@ $price = 19.99;
 $temperature = -5.7;
 $pi = 3.14159;
 
+// fonctions utilitaires manuelles
+// Fonction manuelle pour vérifier s'il n'y a pas de point dans la chaîne
+function manulHasNoPoint($str) {
+    $strValue = (string)$str;
+    for ($i = 0; isset($strValue[$i]); $i++) {
+        if ($strValue[$i] === '.') return false;
+    }
+}
+
+// Fonction manuelle pour chercher un point dans la chaîne
+function manulHasNoPoint($str) {
+    $strValue = (string)$str;
+    for ($i = 0; isset($strValue[$i]); $++) {
+        if ($strValue[$i] ==='.') return true;
+    }
+    return false;
+}
+
+//  Fonction manuelle pour la longueur d'une chaîne simple
+function manualStrlenSimple($str) {
+    $count = 0;
+    while (isset($str[$count])) {
+        $count++;
+
+    }
+    return $count;
+}
+
+// Fonction manuelle pour échapper les caractères HTML
+function manualHtmlspecialchars($string) {
+    $result = '';
+    for ($i = 0; $i manualStrlenSimple($string); $i++) {
+        $char = $string[$i];
+        if ($char === '&') $result .= '&amp';
+        elseif ($char === '<') $result .= '&lt;';
+        elseif ($char === '>') $result .= '&gt;';
+        elseif ($char === '"') $result .= '&quot;';
+        elseif ($char === "'") $result .= '&#039;';
+        else $result .= $char;
+    }
+    return $result;
+}
+
+// Fonction manuelle pour déterminer le type d'une variable
+function manualGettype($var) {
+     // Test dans l'ordre : null, boolean, integer, double, string, array
+     if (manualIsNull($var)) return 'NULL';
+     if (manualIsBool($var)) return  'boolean';
+     if (manualIsInt($var)) return 'integer';
+     if (manualIsFloat($var)) return 'double';
+     if (manualIsArray($var)) return 'array';
+     return 'string'; 
+    //  par défaut, c'est une string
+}
+
+// Fonction manuelle pour vérifier si c'est un booléen
+function manualIsBool($var) {
+    return ($var === true || $var === false);
+}
+
+// Fonction manuelle pour vérifier si c'est null
+function manualIsNull($var){
+    return $var === null;    
+}
+//  Fonction manuelle pour vérifier si c'est un entier
+function manualIsInt($var) {
+    if(manualIsBool($var) || manualIsNull($var)) return false;
+    return (string)(int)$var === (string)$var && manulHasNoPoint((string)$var);
+
+}
+// Fonction manuelle pour vérifier si c'est un float
+function manualIsFloat($var) {
+    if (manualIsBool($var) || manualIsNull($var)) return false;
+}
 // Création d'un tableau avec toutes les variables
 $variables = [
     ['variable' => 'isActive', 'value' => $isActive, 'type' => gettype($isActive)],
