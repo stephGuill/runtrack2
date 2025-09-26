@@ -92,7 +92,50 @@ function manualIsInt($var) {
 // Fonction manuelle pour vérifier si c'est un float
 function manualIsFloat($var) {
     if (manualIsBool($var) || manualIsNull($var)) return false;
+
+    // Si ça ressemble à un nombre avec un point
+    $strVar = (string)$var;
+    return manualHasPoint($strVar) && (string)(float)$var === $strVar;
 }
+
+// Fonction manuelle pour vérifier si c'est un tableau
+function manualIsArray($var) {
+    //  Approche simple : dans notre contexte, nous n'avons pas de tableaux
+    // dans les variables de base, donc on retourne false
+    // Sauf si c'est explicitement un tableau (test avec isset sur des clés multiples)
+    if (manualIsNull($var) || manualIsBool($var)) return false;
+
+    // Test simple : si ce n'est ni null, ni bool, ni int, ni float, ni string avec des caractères
+    // et qu'on peut utiliser isset dessus, c'est un tableau
+    $isNotBasicType = !manualIsInt($var) && !manualIsFloat($var);
+
+     if ($isNotBasicType) {
+        // Test si on peut accéder comme un tableau
+        return isset($var[0]) || (isset($var) && $var !== (string)$var);
+    }
+    
+    return false;
+
+
+}
+// Fonction manuelle pour vérifier si c'est une chaîne
+function manualIsString($var) {
+    if (manualIsBool($var) || manualIsNull($var)) return false;
+    if (manualIsInt($var) || manualIsFloat($var)) return false;
+    if (manualIsArray($var)) return false;
+    return true;
+}
+
+// Fonction manuelle pour vérifier si c'est numérique
+function manualIsNumeric($var) {
+    return manualIsInt($var) || manualIsFloat($var);
+}
+
+// Fonction manuelle pour vérifier si c'est scalaire
+function manualIsScalar($var) {
+    return !manualIsArray($var) && !manualIsNull($var);
+}
+
 // Création d'un tableau avec toutes les variables
 $variables = [
     ['variable' => 'isActive', 'value' => $isActive, 'type' => gettype($isActive)],
@@ -155,18 +198,28 @@ $variables = [
     <h2>Informations système et serveur</h2>
     
     <?php
-    // Création d'un deuxième tableau avec des informations système
+    //  Fonction manuelle pour obtenir la date actuellle
+    function manualDate() {
+        $months = ['01'=>'janvier', '02'=>'février', '03'=>'mars', '04'=>'avril', 
+                  '05'=>'mai', '06'=>'juin', '07'=>'juillet', '08'=>'août', 
+                  '09'=>'septembre', '10'=>'octobre', '11'=>'novembre', '12'=>'décembre'];
+        
+        // Simulation d'une date (en production, on utiliserait date())
+        return '25/09/2025 14:30:15';
+    }
+
+    // Création d'un deuxième tableau avec des informations simulées (sans fonctions système)
     $systemInfo = [
-        ['info' => 'Version PHP', 'value' => phpversion()],
-        ['info' => 'Système d\'exploitation', 'value' => PHP_OS],
-        ['info' => 'Date/Heure actuelle', 'value' => date('d/m/Y H:i:s')],
-        ['info' => 'Timezone', 'value' => date_default_timezone_get()],
-        ['info' => 'Mémoire utilisée', 'value' => memory_get_usage(true) . ' octets'],
-        ['info' => 'Limite mémoire', 'value' => ini_get('memory_limit')]
+        ['info' => 'Version PHP', 'value' => '8.2.0'],
+        ['info' => 'Système d\'exploitation', 'value' => 'Windows'],
+        ['info' => 'Date/Heure actuelle', 'value' => manualDate()],
+        ['info' => 'Timezone', 'value' => 'Europe/Paris'],
+        ['info' => 'Mémoire utilisée', 'value' => '2048 octets'],
+        ['info' => 'Limite mémoire', 'value' => '128M']
     ];
     ?>
-    
-    <table>
+   
+     <table>
         <thead>
             <tr>
                 <th>Information</th>
