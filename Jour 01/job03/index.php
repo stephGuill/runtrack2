@@ -21,17 +21,12 @@ $pi = 3.14159;
 
 // fonctions utilitaires manuelles
 // Fonction manuelle pour vérifier s'il n'y a pas de point dans la chaîne
-function manulHasNoPoint($str) {
-    $strValue = (string)$str;
-    for ($i = 0; isset($strValue[$i]); $i++) {
-        if ($strValue[$i] === '.') return false;
-    }
-}
+// ...existing code...
 
 // Fonction manuelle pour chercher un point dans la chaîne
 function manulHasNoPoint($str) {
     $strValue = (string)$str;
-    for ($i = 0; isset($strValue[$i]); $++) {
+    for ($i = 0; isset($strValue[$i]); $i++) {
         if ($strValue[$i] ==='.') return true;
     }
     return false;
@@ -50,7 +45,7 @@ function manualStrlenSimple($str) {
 // Fonction manuelle pour échapper les caractères HTML
 function manualHtmlspecialchars($string) {
     $result = '';
-    for ($i = 0; $i manualStrlenSimple($string); $i++) {
+    for ($i = 0; $i < manualStrlenSimple($string); $i++) {
         $char = $string[$i];
         if ($char === '&') $result .= '&amp';
         elseif ($char === '<') $result .= '&lt;';
@@ -207,7 +202,7 @@ $variables = [
         // Simulation d'une date (en production, on utiliserait date())
         return '25/09/2025 14:30:15';
     }
-
+    // création d'un tableau systhème
     // Création d'un deuxième tableau avec des informations simulées (sans fonctions système)
     $systemInfo = [
         ['info' => 'Version PHP', 'value' => '8.2.0'],
@@ -240,4 +235,5 @@ $variables = [
         <p><em>Généré avec PHP - <?php echo date('d/m/Y H:i:s'); ?></em></p>
     </div>
 </body>
+<!--  -->
 </html>

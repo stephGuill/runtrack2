@@ -1,27 +1,150 @@
-<?php
-$hauteur = 15; 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triangle parfait avec étoiles</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Triangle parfait avec étoiles</h1>
+        
+        <?php
+        // Hauteur du triangle
+        $hauteur = 12;
+        ?>
+        
+        <div class="dimension-card">
+            <h3>Hauteur du triangle</h3>
+            <div class="dimension-value">8</div>
+            <p>lignes</p>
+        </div>
+        
+        <div class="triangle">
+<pre><?php
+// Triangle isocèle (sapin) - version corrigée
+$hauteur = 8; // Réduisons la hauteur pour tester
 
-// $i correspond au numéro de la ligne (de 1 à $hauteur).
-// $j correspond au nombre d'étoiles à afficher sur cette ligne.
-// Donc pour chaque ligne $i, on affiche $i étoiles.
-// pour cet exemple, on a 5 lignes, donc $i va de 1 à 5.
-// *
-// **
-// ***
-// ****
-// *****
-
-for ($i = 1; $i <= $hauteur; $i++) {            
-    // afficher $i caractères (étoiles sur les bords, espaces à l'intérieur)
-    for ($j = 1; $j <= $i; $j++) {
-        // Si on est sur les bords ou sur la dernière ligne
-        if ($j == 1 || $j == $i || $i == $hauteur) {
+for ($ligne = 1; $ligne <= $hauteur; $ligne++) {
+    // Espaces pour centrer
+    for ($i = 1; $i <= ($hauteur - $ligne); $i++) {
+        echo " ";
+    }
+    
+    // Première étoile
+    echo "*";
+    
+    // Intérieur du triangle (si pas la première ligne)
+    if ($ligne > 1) {
+        for ($j = 1; $j <= (2 * $ligne - 3); $j++) {
+            if ($ligne == $hauteur) {
+                echo "*"; // Base remplie
+            } else {
+                echo " "; // Intérieur avec espaces vides
+            }
+        }
+        
+        // Dernière étoile (si pas la première ligne)
+        if ($ligne > 1) {
             echo "*";
-        } else {
-            // Sinon on affiche un espace (triangle blanc à l'intérieur)
-            echo "&nbsp;";
         }
     }
-    echo "<br />";
+    
+    echo "\n";
 }
-?>
+?></pre>
+        </div>
+        
+        <div class="info-box">
+            <h3>Spécifications du triangle :</h3>
+            <ul>
+                <li><strong>Hauteur :</strong> 8 lignes</li>
+                <li><strong>Type :</strong> Triangle isocèle creux (sapin)</li>
+                <li><strong>Largeur base :</strong> 15 caractères</li>
+                <li><strong>Bordures :</strong> Étoiles ( * )</li>
+                <li><strong>Intérieur :</strong> Espaces vides</li>
+                <li><strong>Forme :</strong> Sapin complet centré</li>
+            </ul>
+        </div>
+        
+        <div class="info-box">
+            <h3>Fonctionnement de l'algorithme :</h3>
+            <ol>
+                <li><strong>Boucle externe :</strong> Parcourt les lignes de 1 à 8</li>
+                <li><strong>Espaces de centrage :</strong> (hauteur - ligne) espaces avant chaque ligne</li>
+                <li><strong>Première étoile :</strong> Toujours affichée</li>
+                <li><strong>Intérieur :</strong> Espaces vides pour les lignes du milieu, étoiles pour la base</li>
+                <li><strong>Dernière étoile :</strong> Affichée sauf pour la première ligne</li>
+                <li><strong>Résultat :</strong> Triangle isocèle parfaitement centré</li>
+            </ol>
+        </div>
+        
+        <h2>Autres exemples de triangles :</h2>
+        
+        <h3>Triangle 5 lignes :</h3>
+        <div class="triangle">
+<pre><?php
+$h2 = 5;
+for ($ligne = 1; $ligne <= $h2; $ligne++) {
+    // Espaces pour centrer
+    for ($i = 1; $i <= ($h2 - $ligne); $i++) {
+        echo " ";
+    }
+    
+    // Première étoile
+    echo "*";
+    
+    // Intérieur (si pas la première ligne)
+    if ($ligne > 1) {
+        for ($j = 1; $j <= (2 * $ligne - 3); $j++) {
+            if ($ligne == $h2) {
+                echo "*"; // Base remplie
+            } else {
+                echo " "; // Intérieur avec espaces vides
+            }
+        }
+        
+        // Dernière étoile
+        echo "*";
+    }
+    
+    echo "\n";
+}
+?></pre>
+        </div>
+        
+        <h3>Triangle 10 lignes :</h3>
+        <div class="triangle">
+<pre><?php
+$h3 = 10;
+for ($ligne = 1; $ligne <= $h3; $ligne++) {
+    // Espaces pour centrer
+    for ($i = 1; $i <= ($h3 - $ligne); $i++) {
+        echo " ";
+    }
+    
+    // Première étoile
+    echo "*";
+    
+    // Intérieur (si pas la première ligne)
+    if ($ligne > 1) {
+        for ($j = 1; $j <= (2 * $ligne - 3); $j++) {
+            if ($ligne == $h3) {
+                echo "*"; // Base remplie
+            } else {
+                echo " "; // Intérieur avec espaces vides
+            }
+        }
+        
+        // Dernière étoile
+        echo "*";
+    }
+    
+    echo "\n";
+}
+?></pre>
+        </div>
+    </div>
+</body>
+</html>

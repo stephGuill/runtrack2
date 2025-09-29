@@ -1,28 +1,56 @@
-<!-- $largeur = au nombre de colonnes(20 par exemple) -->
-<!-- $hauteur = au nombre de lignes(8 par exemple) -->
-<!-- première boucle gère les lignes -->
-<!-- deuxième boucle gère les colonnes -->
-<!-- Rectangle avec bordure d'étoiles et intérieur vide -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rectangle parfait avec étoiles</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <h1> Rectangle parfait avec étoiles</h1>
+        
+    <?php
+    // Dimensions du rectangle (ajustées pour un rendu parfait)
+    $largeur = 30;
+    $hauteur = 12;
+    ?>
+        
+        <div class="dimensions">
+            <div class="dimension-card">
+                <h3>Largeur</h3>
+                <div class="dimension-value"><?php echo $largeur; ?></div>
+                <p>caractères</p>
+            </div>
+            <div class="dimension-card">
+                <h3>Hauteur</h3>
+                <div class="dimension-value"><?php echo $hauteur; ?></div>
+                <p>lignes</p>
+            </div>
+        </div>
+        
 
-<?php
-$largeur = 20;
-$hauteur = 8; 
 
-for ($ligne = 1; $ligne <= $hauteur; $ligne++) {
-    for ($colonne = 1; $colonne <= $largeur; $colonne++) {
-        if ($ligne == 1 || $ligne == $hauteur || $colonne == 1 || $colonne == $largeur) {
-            echo "#";
-        } else {
-            echo " ";
-            //  Un espace vide
-        }
-    }
-    echo "\n";
-}
-?>
-</pre>
-</div>
- <div class="info-box">
+        <!-- <div class="rectangle" style="font-family: monospace; background: black; color: lime; padding: 10px;"> -->
+            <?php
+            // Rectangle parfait avec bordures seulement
+            echo '<pre style="margin:0;">';
+            for ($ligne = 1; $ligne <= $hauteur; $ligne++) {
+                for ($colonne = 1; $colonne <= $largeur; $colonne++) {
+                    if ($ligne == 1 || $ligne == $hauteur || $colonne == 1 || $colonne == $largeur) {
+                        echo "*";
+                    } else {
+                        echo " ";
+                    }
+                }
+                echo "\n";
+            }
+            echo '</pre>';
+            ?>
+        </pre>
+        </div>
+        
+        <div class="info-box">
             <h3>Spécifications du rectangle :</h3>
             <ul>
                 <li><strong>Largeur :</strong> <?php echo $largeur; ?> caractères</li>
@@ -34,15 +62,17 @@ for ($ligne = 1; $ligne <= $hauteur; $ligne++) {
         </div>
         
         <div class="code-section">
-            <h3>Code de génération :</h3>
-        <pre>
-&lt;<?php
-$largeur = <?php echo $largeur; ?>;
-$hauteur = <?php echo $hauteur; ?>;
+            
+  <pre>
+&lt;
+
+    <?php
+    $largeur = 30;
+    $hauteur = 12;
 
 $rectangle = "";
-for ($ligne = 1; $ligne &lt;= $hauteur; $ligne++) {
-    for ($colonne = 1; $colonne &lt;= $largeur; $colonne++) {
+for ($ligne = 1; $ligne <= $hauteur; $ligne++) {
+    for ($colonne = 1; $colonne <= $largeur; $colonne++) {
         if ($ligne == 1 || $ligne == $hauteur || $colonne == 1 || $colonne == $largeur) {
             $rectangle .= "#";
         } else {
@@ -51,10 +81,9 @@ for ($ligne = 1; $ligne &lt;= $hauteur; $ligne++) {
     }
     $rectangle .= "\n";
 }
-echo $rectangle;
-&gt;
-            </pre>
-        </div>
+?>
+
+&gt;       
         
         <div class="info-box">
             <h3>Fonctionnement de l'algorithme :</h3>
@@ -67,72 +96,52 @@ echo $rectangle;
             </ol>
         </div>
         
+        
         <h2>Autres exemples de rectangles :</h2>
         
         <h3>Rectangle 8x8 (carré) :</h3>
-        <div class="rectangle" style="font-family: monospace; background: black; color: lime; padding: 10px;">
-<pre><?php
+        <!-- <div class="rectangle" style="font-family: monospace; background: black; color: lime; padding: 10px;"> -->
+
+    <?php
             $largeur3 = 8;
             $hauteur3 = 8;
-            
+            echo '<pre style="margin:0;">';
             for ($ligne = 1; $ligne <= $hauteur3; $ligne++) {
                 for ($colonne = 1; $colonne <= $largeur3; $colonne++) {
                     if ($ligne == 1 || $ligne == $hauteur3 || $colonne == 1 || $colonne == $largeur3) {
-                        echo "#";
-                    } else {
-                        echo ".";
-                    }
-                }
-                echo "\n";
-            }
-?></pre>
-        </div>
-        
-        <h3>Rectangle 25x4 (très large) :</h3>
-        <div class="rectangle" style="font-family: monospace; background: black; color: lime; padding: 10px;">
-<pre><?php
-            $largeur4 = 25;
-            $hauteur4 = 4;
-            
-            for ($ligne = 1; $ligne <= $hauteur4; $ligne++) {
-                for ($colonne = 1; $colonne <= $largeur4; $colonne++) {
-                    if ($ligne == 1 || $ligne == $hauteur4 || $colonne == 1 || $colonne == $largeur4) {
-                        echo "#";
+                        echo "*";
                     } else {
                         echo " ";
                     }
                 }
                 echo "\n";
             }
-?>
+            echo '</pre>';
+    ?>
+</pre>
+        </div>
+        
+        <h3>Rectangle 25x4 (très large) :</h3>
+        <!-- <div class="rectangle" style="font-family: monospace; background: black; color: lime; padding: 10px;"> -->
+<pre>
+    <?php
+            $largeur4 = 25;
+            $hauteur4 = 4;
+            echo '<pre style="margin:0;">';
+            for ($ligne = 1; $ligne <= $hauteur4; $ligne++) {
+                for ($colonne = 1; $colonne <= $largeur4; $colonne++) {
+                    if ($ligne == 1 || $ligne == $hauteur4 || $colonne == 1 || $colonne == $largeur4) {
+                        echo "*";
+                    } else {
+                        echo " ";
+                    }
+                }
+                echo "\n";
+            }
+            echo '</pre>';
+    ?>
 </pre>
         </div>
     </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-for ($h = 1; $h <= $hauteur; $h++) {
-    for ($l = 1; $l <= $largeur; $l++) {
-        // Si on est sur les bords (première/dernière ligne ou première/dernière colonne)
-        if ($h == 1 || $h == $hauteur || $l == 1 || $l == $largeur) {
-            echo "*";
-        } else {
-            // Sinon on affiche un espace (rectangle blanc à l'intérieur)
-            echo "&nbsp;";
-        }
-    }
-    echo "<br />";
-}
-?>
