@@ -69,19 +69,17 @@
             <input type="submit" value="Envoyer les données">
         </form>
         
-        <div style="margin-top: 30px; padding: 15px; background-color: #e3f2fd; border-radius: 8px;">
+        
             <h3>Comment ça marche :</h3>
             <ul>
-                <li><strong>count($_GET)</strong> : Compte le nombre d'éléments dans le tableau $_GET</li>
+                <li><p>count($_GET)</p> : Compte le nombre d'éléments dans le tableau $_GET</li>
                 <li>Chaque champ du formulaire avec une valeur devient un argument GET</li>
                 <li>Les champs vides ne sont pas envoyés (donc pas comptés)</li>
                 <li>L'URL sera de la forme : <code>index.php?nom=valeur&prenom=valeur...</code></li>
             </ul>
         </div>
         
-        <div style="margin-top: 20px; text-align: center; color: #666;">
-            <p><em>Généré avec PHP - <?php echo date('d/m/Y H:i:s'); ?></em></p>
-        </div>
+       
     </div>
 </body>
 </html>

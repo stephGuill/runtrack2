@@ -50,7 +50,7 @@ function hello() {<br>
 <br>
 hello(); // Affiche directement
                 </div>
-                <p><strong>Problème :</strong> Affichage immédiat, pas de flexibilité</p>
+                <p>Problème : Affichage immédiat, pas de flexibilité</p>
             </div>
             
             <div class="comparison-item return">
@@ -63,7 +63,7 @@ function getHello() {<br>
 $msg = getHello(); // Récupère la valeur<br>
 echo $msg; // Affiche quand on veut
                 </div>
-                <p><strong>Avantage :</strong> Valeur réutilisable et manipulable</p>
+                <p>Avantage : Valeur réutilisable et manipulable</p>
             </div>
         </div>
         
@@ -112,27 +112,25 @@ if (getHello() === "Hello LaPlateforme!") {
         <div class="info-box">
             <h3>🔍 Différences clés :</h3>
             <ul>
-                <li><strong>echo :</strong> Affiche immédiatement, ne peut pas être réutilisé</li>
-                <li><strong>return :</strong> Renvoie une valeur, peut être stockée et manipulée</li>
-                <li><strong>Flexibilité :</strong> return permet de composer et transformer les données</li>
-                <li><strong>Testabilité :</strong> Une fonction avec return est plus facile à tester</li>
-                <li><strong>Réutilisabilité :</strong> La valeur retournée peut servir plusieurs fois</li>
+                <li><p>echo :</p> Affiche immédiatement, ne peut pas être réutilisé</li>
+                <li><p>return :</p> Renvoie une valeur, peut être stockée et manipulée</li>
+                <li><p>Flexibilité :</p> return permet de composer et transformer les données</li>
+                <li><p>Testabilité :</p> Une fonction avec return est plus facile à tester</li>
+                <li><p>Réutilisabilité :</p> La valeur retournée peut servir plusieurs fois</li>
             </ul>
         </div>
         
         <div class="info-box">
             <h3>💡 Bonnes pratiques :</h3>
             <ul>
-                <li>Utilisez <strong>return</strong> pour les calculs et transformations</li>
-                <li>Utilisez <strong>echo</strong> uniquement pour l'affichage final</li>
+                <li>Utilisez <p>return</p> pour les calculs et transformations</li>
+                <li>Utilisez <p>echo</p> uniquement pour l'affichage final</li>
                 <li>Une fonction ne devrait avoir qu'une seule responsabilité</li>
                 <li>Préférez return pour une meilleure séparation des préoccupations</li>
             </ul>
         </div>
         
-        <div style="margin-top: 30px; text-align: center; color: #666;">
-            <p><em>Généré avec PHP - <?php echo date('d/m/Y H:i:s'); ?></em></p>
-        </div>
+       
     </div>
 </body>
 </html>

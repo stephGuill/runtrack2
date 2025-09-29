@@ -89,14 +89,14 @@ function leetSpeak($str) {<br>
             </div>
         </div>
         
-        <h2 style="color: #333; text-align: center;">🧪 Démonstrations de conversion</h2>
+        <h2>🧪 Démonstrations de conversion</h2>
         
         <div class="demo-section">
             <h3>🎯 Exemples basiques</h3>
             
             <div class="test-case">
                 <h4>Test 1 : Mot simple</h4>
-                <p><strong>Code :</strong> <code>leetSpeak("Hello")</code></p>
+                <p>Code : <code>leetSpeak("Hello")</code></p>
                 <div class="before-after">
                     <div class="original-text">Hello</div>
                     <div class="arrow">→</div>
@@ -106,7 +106,7 @@ function leetSpeak($str) {<br>
             
             <div class="test-case">
                 <h4>Test 2 : Phrase complète</h4>
-                <p><strong>Code :</strong> <code>leetSpeak("Bonjour les amis")</code></p>
+                <p>Code : <code>leetSpeak("Bonjour les amis")</code></p>
                 <div class="before-after">
                     <div class="original-text">Bonjour les amis</div>
                     <div class="arrow">→</div>
@@ -116,7 +116,7 @@ function leetSpeak($str) {<br>
             
             <div class="test-case">
                 <h4>Test 3 : Majuscules et minuscules</h4>
-                <p><strong>Code :</strong> <code>leetSpeak("LEET SPEAK")</code></p>
+                <p>Code : <code>leetSpeak("LEET SPEAK")</code></p>
                 <div class="before-after">
                     <div class="original-text">LEET SPEAK</div>
                     <div class="arrow">→</div>
@@ -126,7 +126,7 @@ function leetSpeak($str) {<br>
             
             <div class="test-case">
                 <h4>Test 4 : Texte mixte</h4>
-                <p><strong>Code :</strong> <code>leetSpeak("The Best Game Ever")</code></p>
+                <p>Code : <code>leetSpeak("The Best Game Ever")</code></p>
                 <div class="before-after">
                     <div class="original-text">The Best Game Ever</div>
                     <div class="arrow">→</div>
@@ -135,15 +135,14 @@ function leetSpeak($str) {<br>
             </div>
         </div>
         
-        <div style="background: linear-gradient(135deg, #ff6b6b, #ee5a52); padding: 25px; border-radius: 15px; color: white; margin: 30px 0;">
-            <h3 style="margin-top: 0; text-align: center;">🚀 Tests avancés</h3>
+        
+            <h3>🚀 Tests avancés</h3>
             
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                <div>
+            
                     <h4>Programmation :</h4>
-                    <div class="original-text" style="background: rgba(255,255,255,0.2); color: white; border: 1px solid rgba(255,255,255,0.3);">
+                   
                         <?php $test1 = "Programming Language"; echo $test1; ?>
-                    </div>
+                    
                     <div class="result-box">
                         <?php echo leetSpeak($test1); ?>
                     </div>
@@ -151,9 +150,9 @@ function leetSpeak($str) {<br>
                 
                 <div>
                     <h4>École :</h4>
-                    <div class="original-text" style="background: rgba(255,255,255,0.2); color: white; border: 1px solid rgba(255,255,255,0.3);">
+                    
                         <?php $test2 = "La Plateforme"; echo $test2; ?>
-                    </div>
+                    
                     <div class="result-box">
                         <?php echo leetSpeak($test2); ?>
                     </div>
@@ -161,9 +160,9 @@ function leetSpeak($str) {<br>
                 
                 <div>
                     <h4>Message secret :</h4>
-                    <div class="original-text" style="background: rgba(255,255,255,0.2); color: white; border: 1px solid rgba(255,255,255,0.3);">
+                    
                         <?php $test3 = "Secret Message"; echo $test3; ?>
-                    </div>
+                    
                     <div class="result-box">
                         <?php echo leetSpeak($test3); ?>
                     </div>
@@ -171,9 +170,9 @@ function leetSpeak($str) {<br>
                 
                 <div>
                     <h4>Tous les caractères :</h4>
-                    <div class="original-text" style="background: rgba(255,255,255,0.2); color: white; border: 1px solid rgba(255,255,255,0.3);">
+                    
                         <?php $test4 = "ABEGIST abegist"; echo $test4; ?>
-                    </div>
+                    
                     <div class="result-box">
                         <?php echo leetSpeak($test4); ?>
                     </div>
@@ -183,29 +182,29 @@ function leetSpeak($str) {<br>
         
         <div class="info-box">
             <h3>🎮 À propos du Leet Speak (1337 5P34K)</h3>
-            <p><strong>Origine :</strong> Le leet speak (ou 1337 speak) est un système d'écriture qui remplace les lettres par des chiffres et des symboles qui leur ressemblent visuellement.</p>
-            <p><strong>Utilisation :</strong> Populaire dans la culture geek, les jeux vidéo et les communautés en ligne depuis les années 1980.</p>
-            <p><strong>Principe :</strong> Substitution de caractères pour créer un langage "codé" reconnaissable par les initiés.</p>
+            <p>Origine : Le leet speak (ou 1337 speak) est un système d'écriture qui remplace les lettres par des chiffres et des symboles qui leur ressemblent visuellement.</p>
+            <p>Utilisation : Populaire dans la culture geek, les jeux vidéo et les communautés en ligne depuis les années 1980.</p>
+            <p>Principe : Substitution de caractères pour créer un langage "codé" reconnaissable par les initiés.</p>
         </div>
         
         <div class="technical-info">
             <h3>🔧 Spécifications techniques :</h3>
-            <ul style="color: #e2e8f0;">
-                <li><strong>Nom :</strong> leetSpeak()</li>
-                <li><strong>Paramètre :</strong> $str (string) - Chaîne à convertir</li>
-                <li><strong>Retour :</strong> Chaîne convertie en leet speak</li>
-                <li><strong>Conversions :</strong> A/a→4, B/b→8, E/e→3, G/g→6, L/l→1, S/s→5, T/t→7</li>
-                <li><strong>Sensibilité casse :</strong> Majuscules ET minuscules supportées</li>
-                <li><strong>Autres caractères :</strong> Conservés tels quels (espaces, ponctuation, etc.)</li>
+            <ul >
+                <li><p>Nom :</p> leetSpeak()</li>
+                <li><p>Paramètre :</p> $str (string) - Chaîne à convertir</li>
+                <li><p>Retour :</p> Chaîne convertie en leet speak</li>
+                <li><p>Conversions :</p> A/a→4, B/b→8, E/e→3, G/g→6, L/l→1, S/s→5, T/t→7</li>
+                <li><p>Sensibilité casse :</p> Majuscules ET minuscules supportées</li>
+                <li><p>Autres caractères :</p> Conservés tels quels (espaces, ponctuation, etc.)</li>
             </ul>
         </div>
         
-        <div style="margin-top: 40px; text-align: center; color: #666; padding: 20px; background: #f7fafc; border-radius: 10px;">
-            <p style="font-family: 'Courier New', monospace; font-size: 1.1em;">
-                <strong>73574N7 C0MP137 !</strong> 🎉<br>
+        <div>
+            
+                <p>73574N7 C0MP137 !</p> 🎉<br>
                 <em>(Testing complet !)</em>
             </p>
-            <p><small>Généré avec PHP - <?php echo date('d/m/Y H:i:s'); ?></small></p>
+            
         </div>
     </div>
 </body>

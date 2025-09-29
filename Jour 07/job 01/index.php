@@ -39,10 +39,10 @@ hello();<br>
         <div class="info-box">
             <h3>🔍 Explication :</h3>
             <ul>
-                <li><strong>Définition :</strong> <code>function hello()</code> déclare la fonction</li>
-                <li><strong>Corps :</strong> Les accolades <code>{ }</code> contiennent le code à exécuter</li>
-                <li><strong>Action :</strong> <code>echo</code> affiche le texte sur la page</li>
-                <li><strong>Appel :</strong> <code>hello();</code> exécute la fonction</li>
+                <li><p>Définition :</p> <code>function hello()</code> déclare la fonction</li>
+                <li><p>Corps :</p> Les accolades <code>{ }</code> contiennent le code à exécuter</li>
+                <li><p>Action :</p> <code>echo</code> affiche le texte sur la page</li>
+                <li><p>Appel :</p> <code>hello();</code> exécute la fonction</li>
             </ul>
         </div>
         
@@ -65,9 +65,7 @@ hello();<br>
             </div>
         </div>
         
-        <div style="margin-top: 30px; text-align: center; color: #666;">
-            <p><em>Généré avec PHP - <?php echo date('d/m/Y H:i:s'); ?></em></p>
-        </div>
+       
     </div>
 </body>
 </html>

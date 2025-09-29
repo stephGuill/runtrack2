@@ -143,9 +143,9 @@
             
             echo '<div class="result-container">';
             echo '<h3>✨ Résultat de la transformation</h3>';
-            echo '<p><strong>Fonction appliquée :</strong> ' . $functionName . '</p>';
-            echo '<p><strong>Description :</strong> ' . $description . '</p>';
-            echo '<p><strong>Texte original :</strong> ' . htmlspecialchars($inputText) . '</p>';
+            echo '<p>Fonction appliquée : ' . $functionName . '</p>';
+            echo '<p>Description : ' . $description . '</p>';
+            echo '<p>Texte original : ' . htmlspecialchars($inputText) . '</p>';
             echo '<div class="result-text">' . $result . '</div>';
             echo '</div>';
         }
@@ -157,7 +157,7 @@
         <div class="examples-grid">
             <div class="example-card">
                 <h4>🔸 Fonction gras($str)</h4>
-                <p><strong>Description :</strong> Met en gras les mots commençant par une majuscule</p>
+                <p>Description : Met en gras les mots commençant par une majuscule</p>
                 <div class="code-example">
 function gras($str) {
     $words = explode(' ', $str);
@@ -175,7 +175,7 @@ function gras($str) {
             
             <div class="example-card">
                 <h4>🔸 Fonction cesar($str, $decalage)</h4>
-                <p><strong>Description :</strong> Décale chaque lettre de $decalage positions (défaut: 2)</p>
+                <p>Description : Décale chaque lettre de $decalage positions (défaut: 2)</p>
                 <div class="code-example">
 function cesar($str, $decalage = 2) {
     for ($i = 0; $i < strlen($str); $i++) {
@@ -193,7 +193,7 @@ function cesar($str, $decalage = 2) {
             
             <div class="example-card">
                 <h4>🔸 Fonction plateforme($str)</h4>
-                <p><strong>Description :</strong> Ajoute "_" aux mots se terminant par "me"</p>
+                <p>Description : Ajoute "_" aux mots se terminant par "me"</p>
                 <div class="code-example">
 function plateforme($str) {
     $words = explode(' ', $str);
@@ -214,15 +214,15 @@ function plateforme($str) {
         <div class="function-info">
             <h4>🎯 Exemples de tests à essayer :</h4>
             <ul>
-                <li><strong>Pour "gras" :</strong> "Bonjour le Monde de PHP"</li>
-                <li><strong>Pour "cesar" :</strong> "Hello World"</li>
-                <li><strong>Pour "plateforme" :</strong> "J'aime la plateforme comme un programme"</li>
+                <li><p>Pour "gras" :</p> "Bonjour le Monde de PHP"</li>
+                <li><p>Pour "cesar" :</p> "Hello World"</li>
+                <li><p>Pour "plateforme" :</p> "J'aime la plateforme comme un programme"</li>
             </ul>
         </div>
         
-        <div style="margin-top: 40px; text-align: center; color: #666; background: #f8f9fa; padding: 20px; border-radius: 10px;">
-            <p><strong>🎉 Transformateur de texte complet !</strong></p>
-            <p><em>Généré avec PHP - <?php echo date('d/m/Y H:i:s'); ?></em></p>
+        <div>
+            <p>🎉 Transformateur de texte complet !</p>
+             <?php echo date('d/m/Y H:i:s'); ?>
         </div>
     </div>
 </body>

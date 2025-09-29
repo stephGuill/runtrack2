@@ -82,22 +82,20 @@
         <div class="info-box">
             <h3>Différences entre GET et POST :</h3>
             <ul>
-                <li><strong>GET</strong> : Les données apparaissent dans l'URL (visible)</li>
-                <li><strong>POST</strong> : Les données sont envoyées dans le corps de la requête (non visible dans l'URL)</li>
-                <li><strong>GET</strong> : Limité en taille (généralement ~2000 caractères)</li>
-                <li><strong>POST</strong> : Pas de limite de taille pratique</li>
-                <li><strong>GET</strong> : Peut être mis en favoris, partagé</li>
-                <li><strong>POST</strong> : Plus sécurisé pour les données sensibles</li>
+                <li><p>GET</p> : Les données apparaissent dans l'URL (visible)</li>
+                <li><p>POST</p> : Les données sont envoyées dans le corps de la requête (non visible dans l'URL)</li>
+                <li><p>GET</p> : Limité en taille (généralement ~2000 caractères)</li>
+                <li><p>POST</p> : Pas de limite de taille pratique</li>
+                <li><p>GET</p> : Peut être mis en favoris, partagé</li>
+                <li><p>POST</p> : Plus sécurisé pour les données sensibles</li>
             </ul>
             
             <h4>Algorithme utilisé :</h4>
             <code>$nombreArguments = count($_POST);</code>
-            <p>La fonction <strong>count()</strong> compte le nombre d'éléments dans le tableau $_POST.</p>
+            <p>La fonction count() compte le nombre d'éléments dans le tableau $_POST.</p>
         </div>
         
-        <div style="margin-top: 20px; text-align: center; color: #666;">
-            <p><em>Généré avec PHP - <?php echo date('d/m/Y H:i:s'); ?></em></p>
-        </div>
+       
     </div>
 </body>
 </html>

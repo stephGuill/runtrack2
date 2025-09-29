@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>🏠 Générateur de maison ASCII</h1>
+        <h1> Générateur de maison ASCII</h1>
         
         <form method="POST" action="">
             <div class="form-group">
@@ -114,48 +114,47 @@
                     echo '</div>';
                     
                     echo '<div class="info-box">';
-                    echo '<h3>🎯 Maison générée :</h3>';
-                    echo '<p><strong>Largeur :</strong> ' . $largeur . ' caractères</p>';
-                    echo '<p><strong>Hauteur :</strong> ' . $hauteur . ' lignes (corps de la maison)</p>';
-                    echo '<p><strong>Hauteur du toit :</strong> ' . $hauteurToit . ' lignes</p>';
-                    echo '<p><strong>Hauteur totale :</strong> ' . ($hauteur + $hauteurToit) . ' lignes</p>';
+                    echo '<h3> Maison générée :</h3>';
+                    echo '<p>Largeur : ' . $largeur . ' caractères</p>';
+                    echo '<p>Hauteur : ' . $hauteur . ' lignes (corps de la maison)</p>';
+                    echo '<p>Hauteur du toit : ' . $hauteurToit . ' lignes</p>';
+                    echo '<p>Hauteur totale : ' . ($hauteur + $hauteurToit) . ' lignes</p>';
                     echo '</div>';
                     
                 } else {
                     echo '<div class="error">';
-                    echo '❌ Erreur : Les dimensions doivent être entre 5-50 pour la largeur et 3-30 pour la hauteur';
+                    echo ' Erreur : Les dimensions doivent être entre 5-50 pour la largeur et 3-30 pour la hauteur';
                     echo '</div>';
                 }
             } else {
                 echo '<div class="error">';
-                echo '❌ Erreur : Veuillez entrer des valeurs numériques valides';
+                echo ' Erreur : Veuillez entrer des valeurs numériques valides';
                 echo '</div>';
             }
         }
         ?>
         
         <div class="examples">
-            <h4>🎯 Exemples de test :</h4>
-            <p><strong>Petite maison :</strong> Largeur = 10, Hauteur = 5</p>
-            <p><strong>Grande maison :</strong> Largeur = 20, Hauteur = 10</p>
-            <p><strong>Maison étroite :</strong> Largeur = 8, Hauteur = 6</p>
-            <p><strong>Maison large :</strong> Largeur = 25, Hauteur = 8</p>
+            <h4>Exemples de test :</h4>
+            <p><p>Petite maison :</p> Largeur = 10, Hauteur = 5</p>
+            <p><p>Grande maison :</p> Largeur = 20, Hauteur = 10</p>
+            <p><p>Maison étroite :</p> Largeur = 8, Hauteur = 6</p>
+            <p><p>Maison large :</p> Largeur = 25, Hauteur = 8</p>
         </div>
         
         <div class="info-box">
-            <h3>📝 Comment ça marche :</h3>
+            <h3>Comment ça marche :</h3>
             <ul>
-                <li><strong>Toit :</strong> Triangle formé avec <code>/</code> et <code>\</code></li>
-                <li><strong>Corps :</strong> Rectangle formé avec <code>|</code> et <code>_</code></li>
-                <li><strong>Porte :</strong> Représentée par <code>[]</code> au centre</li>
-                <li><strong>Hauteur du toit :</strong> Calculée selon la largeur</li>
-                <li><strong>Validation :</strong> Limites raisonnables pour éviter les maisons trop grandes</li>
+                <li><p>Toit :</p> Triangle formé avec <code>/</code> et <code>\</code></li>
+                <li><p>Corps :</p> Rectangle formé avec <code>|</code> et <code>_</code></li>
+                <li><p>Porte :</p> Représentée par <code>[]</code> au centre</li>
+                <li><p>Hauteur du toit :</p> Calculée selon la largeur</li>
+                <li><p>Validation :</p> Limites raisonnables pour éviter les maisons trop grandes</li>
             </ul>
         </div>
         
-        <div style="margin-top: 20px; text-align: center; color: #666;">
-            <p><em>Généré avec PHP - <?php echo date('d/m/Y H:i:s'); ?></em></p>
-        </div>
+        
+            
     </div>
 </body>
 </html>

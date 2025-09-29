@@ -40,8 +40,8 @@ function bonjour($jour) {<br>
         
         <div class="test-case">
             <h4>Test 1 : bonjour(true)</h4>
-            <p><strong>Paramètre :</strong> <code>$jour = true</code></p>
-            <p><strong>Résultat attendu :</strong> "Bonjour"</p>
+            <p>Paramètre : <code>$jour = true</code></p>
+            <p>Résultat attendu : "Bonjour"</p>
             <div class="result jour">
                 <?php bonjour(true); ?>
             </div>
@@ -49,8 +49,8 @@ function bonjour($jour) {<br>
         
         <div class="test-case">
             <h4>Test 2 : bonjour(false)</h4>
-            <p><strong>Paramètre :</strong> <code>$jour = false</code></p>
-            <p><strong>Résultat attendu :</strong> "Bonsoir"</p>
+            <p>Paramètre : <code>$jour = false</code></p>
+            <p>Résultat attendu : "Bonsoir"</p>
             <div class="result nuit">
                 <?php bonjour(false); ?>
             </div>
@@ -59,11 +59,11 @@ function bonjour($jour) {<br>
         <div class="info-box">
             <h3>🔍 Explication :</h3>
             <ul>
-                <li><strong>Fonction avec paramètre :</strong> <code>function bonjour($jour)</code></li>
-                <li><strong>Paramètre booléen :</strong> <code>$jour</code> peut être <code>true</code> ou <code>false</code></li>
-                <li><strong>Condition :</strong> <code>if ($jour === true)</code> teste la valeur exacte</li>
-                <li><strong>Branchement :</strong> Affiche "Bonjour" si true, "Bonsoir" si false</li>
-                <li><strong>Comparaison stricte :</strong> <code>===</code> vérifie le type et la valeur</li>
+                <li><p>Fonction avec paramètre :</p> <code>function bonjour($jour)</code></li>
+                <li><p>Paramètre booléen :</p> <code>$jour</code> peut être <code>true</code> ou <code>false</code></li>
+                <li><p>Condition :</p> <code>if ($jour === true)</code> teste la valeur exacte</li>
+                <li><p>Branchement :</p> Affiche "Bonjour" si true, "Bonsoir" si false</li>
+                <li><p>Comparaison stricte :</p> <code>===</code> vérifie le type et la valeur</li>
             </ul>
         </div>
         
@@ -91,16 +91,14 @@ bonjour($heure &lt; 18); // "Bonjour" avant 18h, "Bonsoir" après
             $heureActuelle = (int)date('H');
             $estJour = ($heureActuelle >= 6 && $heureActuelle < 18);
             ?>
-            <p><strong>Heure actuelle :</strong> <?php echo date('H:i'); ?></p>
-            <p><strong>Est-ce le jour ? :</strong> <?php echo $estJour ? 'true' : 'false'; ?></p>
+            <p>Heure actuelle : <?php echo date('H:i'); ?></p>
+            <p>Est-ce le jour ? : <?php echo $estJour ? 'true' : 'false'; ?></p>
             <div class="result <?php echo $estJour ? 'jour' : 'nuit'; ?>">
                 <?php bonjour($estJour); ?>
             </div>
         </div>
         
-        <div style="margin-top: 30px; text-align: center; color: #666;">
-            <p><em>Généré avec PHP - <?php echo date('d/m/Y H:i:s'); ?></em></p>
-        </div>
+        
     </div>
 </body>
 </html>

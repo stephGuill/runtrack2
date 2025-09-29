@@ -37,7 +37,7 @@
             
             // Afficher le nombre total d'arguments
             $nombreArguments = count($_GET);
-            echo '<p><strong>Nombre total d\'arguments : ' . $nombreArguments . '</strong></p>';
+            echo '<p>Nombre total d\'arguments : ' . $nombreArguments . '</p>';
             
         } else {
             echo '<div class="no-arguments">';
@@ -81,20 +81,18 @@
         <div class="info-box">
             <h3>Comment ça marche :</h3>
             <ul>
-                <li>Le formulaire utilise la méthode <strong>GET</strong></li>
+                <li>Le formulaire utilise la méthode <p>GET</p></li>
                 <li>Chaque champ rempli devient un argument dans l'URL</li>
-                <li>L'algorithme parcourt le tableau <strong>$_GET</strong> avec <strong>foreach</strong></li>
+                <li>L'algorithme parcourt le tableau <p>$_GET</p> avec <p>foreach</p></li>
                 <li>Chaque paire clé/valeur est affichée dans une ligne du tableau</li>
-                <li>La fonction <strong>htmlspecialchars()</strong> sécurise l'affichage</li>
+                <li>La fonction <p>htmlspecialchars()</p> sécurise l'affichage</li>
             </ul>
             
             <h4>Exemple d'URL générée :</h4>
             <code>index.php?prenom=Stephane&nom=Dupon&age=30&ville=Paris</code>
         </div>
         
-        <div style="margin-top: 20px; text-align: center; color: #666;">
-            <p><em>Généré avec PHP - <?php echo date('d/m/Y H:i:s'); ?></em></p>
-        </div>
+        
     </div>
 </body>
 </html>

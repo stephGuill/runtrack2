@@ -38,7 +38,7 @@
             // Afficher le nombre total d'arguments
             $nombreArguments = count($_POST);
             echo '<div class="post-info">';
-            echo '<strong>Nombre total d\'arguments POST : ' . $nombreArguments . '</strong>';
+            echo '<p>Nombre total d\'arguments POST : ' . $nombreArguments . '</p>';
             echo '</div>';
             
         } else {
@@ -89,10 +89,10 @@
         <div class="post-info">
             <h3>Caractéristiques de la méthode POST :</h3>
             <ul>
-                <li><strong>Sécurité</strong> : Les données ne sont pas visibles dans l'URL</li>
-                <li><strong>Taille</strong> : Pas de limitation pratique de taille des données</li>
-                <li><strong>Confidentialité</strong> : Les données ne restent pas dans l'historique du navigateur</li>
-                <li><strong>Idéal pour</strong> : Formulaires de contact, inscription, envoi de fichiers</li>
+                <li><p>Sécurité</p> : Les données ne sont pas visibles dans l'URL</li>
+                <li><p>Taille</p> : Pas de limitation pratique de taille des données</li>
+                <li><p>Confidentialité</p> : Les données ne restent pas dans l'historique du navigateur</li>
+                <li><p>Idéal pour</p> : Formulaires de contact, inscription, envoi de fichiers</li>
             </ul>
             
             <h4>Algorithme utilisé :</h4>
@@ -106,25 +106,10 @@
         <div class="info-box">
             <h3>Exemple de résultat attendu :</h3>
             <p>Si vous remplissez les champs "prenom" avec "Stephane" et "nom" avec "Dupon", le tableau affichera :</p>
-            <table style="border-collapse: collapse; margin: 10px 0;">
-                <tr style="background-color: #FF9800; color: white;">
-                    <th style="padding: 8px; border: 1px solid #ddd;">Argument</th>
-                    <th style="padding: 8px; border: 1px solid #ddd;">Valeur</th>
-                </tr>
-                <tr>
-                    <td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">prenom</td>
-                    <td style="padding: 8px; border: 1px solid #ddd; font-style: italic;">Stephane</td>
-                </tr>
-                <tr style="background-color: #f9f9f9;">
-                    <td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">nom</td>
-                    <td style="padding: 8px; border: 1px solid #ddd; font-style: italic;">Dupon</td>
-                </tr>
-            </table>
+           
         </div>
         
-        <div style="margin-top: 20px; text-align: center; color: #666;">
-            <p><em>Généré avec PHP - <?php echo date('d/m/Y H:i:s'); ?></em></p>
-        </div>
+       
     </div>
 </body>
 </html>

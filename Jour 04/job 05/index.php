@@ -45,7 +45,7 @@
         </form>
         
         <div class="credentials">
-            <strong>💡 Identifiants de test :</strong><br>
+            <p> Identifiants de test :</p><br>
             Nom d'utilisateur : <code>John</code><br>
             Mot de passe : <code>Rambo</code>
         </div>
@@ -53,20 +53,18 @@
         <div class="info-box">
             <h3>Pourquoi POST et pas GET ?</h3>
             <ul>
-                <li><strong>Sécurité</strong> : Les mots de passe ne doivent jamais apparaître dans l'URL</li>
-                <li><strong>Confidentialité</strong> : Les données POST ne restent pas dans l'historique</li>
-                <li><strong>Cache</strong> : Les requêtes POST ne sont pas mises en cache</li>
-                <li><strong>Logs</strong> : Les serveurs web n'enregistrent pas les données POST dans les logs d'accès</li>
-                <li><strong>Partage</strong> : Une URL avec GET peut être partagée accidentellement avec les identifiants</li>
+                <li><p>Sécurité</p> : Les mots de passe ne doivent jamais apparaître dans l'URL</li>
+                <li><p>Confidentialité</p> : Les données POST ne restent pas dans l'historique</li>
+                <li><p>Cache</p> : Les requêtes POST ne sont pas mises en cache</li>
+                <li><p>Logs</p> : Les serveurs web n'enregistrent pas les données POST dans les logs d'accès</li>
+                <li><p>Partage</p> : Une URL avec GET peut être partagée accidentellement avec les identifiants</li>
             </ul>
             
-            <p><strong>Avec GET :</strong> <code>site.com/login.php?username=John&password=Rambo</code> ❌</p>
-            <p><strong>Avec POST :</strong> Les données sont invisibles dans l'URL ✅</p>
+            <p>Avec GET : <code>site.com/login.php?username=John&password=Rambo</code> ❌</p>
+            <p>Avec POST : Les données sont invisibles dans l'URL ✅</p>
         </div>
         
-        <div style="margin-top: 20px; text-align: center; color: #666; font-size: 12px;">
-            <p><em>Généré avec PHP - <?php echo date('d/m/Y H:i:s'); ?></em></p>
-        </div>
+        
     </div>
 </body>
 </html>

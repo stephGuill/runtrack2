@@ -29,12 +29,12 @@
         
         <div class="example-highlight">
             <h3>📋 Exemple de l'énoncé :</h3>
-            <p><strong>Chaîne :</strong> "Bonjour"</p>
-            <p><strong>Caractère recherché :</strong> "o"</p>
+            <p>Chaîne : "Bonjour"</p>
+            <p>Caractère recherché : "o"</p>
             <div class="string-analysis">
                 B<span class="char-highlight">o</span>nj<span class="char-highlight">o</span>ur
             </div>
-            <p><strong>Résultat :</strong> <span class="result"><?php echo occurrences("Bonjour", "o"); ?></span> occurrences</p>
+            <p>Résultat : <span class="result"><?php echo occurrences("Bonjour", "o"); ?></span> occurrences</p>
         </div>
         
         <div class="info-box">
@@ -62,62 +62,62 @@ function occurrences($str, $char) {<br>
         
         <div class="test-case">
             <h4>Test 1 : Exemple de l'énoncé</h4>
-            <p><strong>Code :</strong> <code>occurrences("Bonjour", "o")</code></p>
+            <p>Code : <code>occurrences("Bonjour", "o")</code></p>
             <div class="string-analysis">B<span class="char-highlight">o</span>nj<span class="char-highlight">o</span>ur</div>
-            <p><strong>Résultat :</strong> <span class="result"><?php echo occurrences("Bonjour", "o"); ?></span></p>
+            <p>Résultat : <span class="result"><?php echo occurrences("Bonjour", "o"); ?></span></p>
         </div>
         
         <div class="test-case">
             <h4>Test 2 : Caractère fréquent</h4>
-            <p><strong>Code :</strong> <code>occurrences("Hello", "l")</code></p>
+            <p>Code : <code>occurrences("Hello", "l")</code></p>
             <div class="string-analysis">He<span class="char-highlight">l</span><span class="char-highlight">l</span>o</div>
-            <p><strong>Résultat :</strong> <span class="result"><?php echo occurrences("Hello", "l"); ?></span></p>
+            <p>Résultat : <span class="result"><?php echo occurrences("Hello", "l"); ?></span></p>
         </div>
         
         <div class="test-case">
             <h4>Test 3 : Caractère unique</h4>
-            <p><strong>Code :</strong> <code>occurrences("PHP", "P")</code></p>
+            <p>Code : <code>occurrences("PHP", "P")</code></p>
             <div class="string-analysis"><span class="char-highlight">P</span>H<span class="char-highlight">P</span></div>
-            <p><strong>Résultat :</strong> <span class="result"><?php echo occurrences("PHP", "P"); ?></span></p>
+            <p>Résultat : <span class="result"><?php echo occurrences("PHP", "P"); ?></span></p>
         </div>
         
         <div class="test-case">
             <h4>Test 4 : Caractère absent</h4>
-            <p><strong>Code :</strong> <code>occurrences("Bonjour", "x")</code></p>
+            <p>Code : <code>occurrences("Bonjour", "x")</code></p>
             <div class="string-analysis">Bonjour</div>
-            <p><strong>Résultat :</strong> <span class="result"><?php echo occurrences("Bonjour", "x"); ?></span></p>
+            <p>Résultat : <span class="result"><?php echo occurrences("Bonjour", "x"); ?></span></p>
         </div>
         
         <div class="test-case">
             <h4>Test 5 : Espace</h4>
-            <p><strong>Code :</strong> <code>occurrences("Hello World", " ")</code></p>
+            <p>Code : <code>occurrences("Hello World", " ")</code></p>
             <div class="string-analysis">Hello<span class="char-highlight"> </span>World</div>
-            <p><strong>Résultat :</strong> <span class="result"><?php echo occurrences("Hello World", " "); ?></span></p>
+            <p>Résultat : <span class="result"><?php echo occurrences("Hello World", " "); ?></span></p>
         </div>
         
         <div class="advanced-tests">
             <h3>🚀 Tests avancés :</h3>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
                 <div>
-                    <p><strong>"LaPlateforme"</strong> avec <strong>"a"</strong></p>
+                    <p>"LaPlateforme" avec "a"</p>
                     <div class="string-analysis">L<span class="char-highlight">a</span>Pl<span class="char-highlight">a</span>teforme</div>
                     <p>Résultat : <span class="result"><?php echo occurrences("LaPlateforme", "a"); ?></span></p>
                 </div>
                 
                 <div>
-                    <p><strong>"Programming"</strong> avec <strong>"m"</strong></p>
+                    <p>"Programming" avec "m"</p>
                     <div class="string-analysis">Progra<span class="char-highlight">m</span><span class="char-highlight">m</span>ing</div>
                     <p>Résultat : <span class="result"><?php echo occurrences("Programming", "m"); ?></span></p>
                 </div>
                 
                 <div>
-                    <p><strong>"aaaaaa"</strong> avec <strong>"a"</strong></p>
+                    <p>"aaaaaa" avec "a"</p>
                     <div class="string-analysis"><span class="char-highlight">a</span><span class="char-highlight">a</span><span class="char-highlight">a</span><span class="char-highlight">a</span><span class="char-highlight">a</span><span class="char-highlight">a</span></div>
                     <p>Résultat : <span class="result"><?php echo occurrences("aaaaaa", "a"); ?></span></p>
                 </div>
                 
                 <div>
-                    <p><strong>"123321"</strong> avec <strong>"2"</strong></p>
+                    <p>"123321" avec "2"</p>
                     <div class="string-analysis">1<span class="char-highlight">2</span>33<span class="char-highlight">2</span>1</div>
                     <p>Résultat : <span class="result"><?php echo occurrences("123321", "2"); ?></span></p>
                 </div>
@@ -138,7 +138,7 @@ function occurrences($str, $char) {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;return $count;<br>
 }
                 </div>
-                <p><strong>Avantages :</strong> Contrôle total, pédagogique</p>
+                <p>Avantages : Contrôle total, pédagogique</p>
             </div>
             
             <div class="method-card">
@@ -148,36 +148,34 @@ function occurrences($str, $char) {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;return substr_count($str, $char);<br>
 }
                 </div>
-                <p><strong>Avantages :</strong> Plus rapide, plus concise</p>
-                <p><strong>Test :</strong> substr_count("Bonjour", "o") = <?php echo substr_count("Bonjour", "o"); ?></p>
+                <p>Avantages : Plus rapide, plus concise</p>
+                <p>Test : substr_count("Bonjour", "o") = <?php echo substr_count("Bonjour", "o"); ?></p>
             </div>
         </div>
         
         <div class="info-box">
             <h3>🔍 Spécifications de la fonction :</h3>
             <ul>
-                <li><strong>Nom :</strong> occurrences()</li>
-                <li><strong>Paramètre 1 :</strong> $str (string) - Chaîne de caractères à analyser</li>
-                <li><strong>Paramètre 2 :</strong> $char (string) - Caractère à rechercher</li>
-                <li><strong>Retour :</strong> Nombre d'occurrences (entier)</li>
-                <li><strong>Algorithme :</strong> Parcours caractère par caractère avec compteur</li>
+                <li><p>Nom :<p> occurrences()</li>
+                <li><p>Paramètre 1 :<p> $str (string) - Chaîne de caractères à analyser</li>
+                <li><p>Paramètre 2 :</p> $char (string) - Caractère à rechercher</li>
+                <li><p>Retour :</p> Nombre d'occurrences (entier)</li>
+                <li><p>Algorithme :</p> Parcours caractère par caractère avec compteur</li>
             </ul>
         </div>
         
         <div class="info-box">
             <h3>💡 Points techniques :</h3>
             <ul>
-                <li>✅ <strong>Boucle for :</strong> Parcours de 0 à strlen($str) - 1</li>
-                <li>✅ <strong>Comparaison stricte :</strong> Utilisation de === pour la comparaison</li>
-                <li>✅ <strong>Accès par index :</strong> $str[$i] pour accéder au caractère</li>
-                <li>✅ <strong>Compteur :</strong> Incrémentation de $count à chaque match</li>
-                <li>✅ <strong>Sensible à la casse :</strong> Distinction majuscules/minuscules</li>
+                <li>✅ <p>Boucle for :</p> Parcours de 0 à strlen($str) - 1</li>
+                <li>✅ <p>Comparaison stricte :</p> Utilisation de === pour la comparaison</li>
+                <li>✅ <p>Accès par index :</p> $str[$i] pour accéder au caractère</li>
+                <li>✅ <p>Compteur :</p> Incrémentation de $count à chaque match</li>
+                <li>✅ <p>Sensible à la casse :</p> Distinction majuscules/minuscules</li>
             </ul>
         </div>
         
-        <div style="margin-top: 30px; text-align: center; color: #666;">
-            <p><em>Généré avec PHP - <?php echo date('d/m/Y H:i:s'); ?></em></p>
-        </div>
+       
     </div>
 </body>
 </html>

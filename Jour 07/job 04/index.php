@@ -76,37 +76,37 @@ function calcule($a, $operation, $b) {<br>
             <div class="operations-grid">
                 <div class="operation-card">
                     <h4>➕ Addition</h4>
-                    <p><strong>calcule(10, '+', 5)</strong></p>
+                    <p>calcule(10, '+', 5)</p>
                     <div class="result"><?php echo calcule(10, '+', 5); ?></div>
                 </div>
                 
                 <div class="operation-card">
                     <h4>➖ Soustraction</h4>
-                    <p><strong>calcule(10, '-', 5)</strong></p>
+                    <p>calcule(10, '-', 5)</p>
                     <div class="result"><?php echo calcule(10, '-', 5); ?></div>
                 </div>
                 
                 <div class="operation-card">
                     <h4>✖️ Multiplication</h4>
-                    <p><strong>calcule(10, '*', 5)</strong></p>
+                    <p>calcule(10, '*', 5)</p>
                     <div class="result"><?php echo calcule(10, '*', 5); ?></div>
                 </div>
                 
                 <div class="operation-card">
                     <h4>➗ Division</h4>
-                    <p><strong>calcule(10, '/', 5)</strong></p>
+                    <p>calcule(10, '/', 5)</p>
                     <div class="result"><?php echo calcule(10, '/', 5); ?></div>
                 </div>
                 
                 <div class="operation-card">
                     <h4>📐 Modulo</h4>
-                    <p><strong>calcule(10, '%', 3)</strong></p>
+                    <p>calcule(10, '%', 3)</p>
                     <div class="result"><?php echo calcule(10, '%', 3); ?></div>
                 </div>
                 
                 <div class="operation-card">
                     <h4>⚠️ Division par zéro</h4>
-                    <p><strong>calcule(10, '/', 0)</strong></p>
+                    <p>calcule(10, '/', 0)</p>
                     <div class="error"><?php echo calcule(10, '/', 0); ?></div>
                 </div>
             </div>
@@ -132,49 +132,47 @@ function calcule($a, $operation, $b) {<br>
             
             <div class="test-case">
                 <h4>Test 1: Division par zéro</h4>
-                <p><strong>Code:</strong> <code>calcule(15, '/', 0)</code></p>
-                <p><strong>Résultat:</strong> <span class="error"><?php echo calcule(15, '/', 0); ?></span></p>
+                <p>Code: <code>calcule(15, '/', 0)</code></p>
+                <p>Résultat: <span class="error"><?php echo calcule(15, '/', 0); ?></span></p>
             </div>
             
             <div class="test-case">
                 <h4>Test 2: Modulo par zéro</h4>
-                <p><strong>Code:</strong> <code>calcule(15, '%', 0)</code></p>
-                <p><strong>Résultat:</strong> <span class="error"><?php echo calcule(15, '%', 0); ?></span></p>
+                <p>Code: <code>calcule(15, '%', 0)</code></p>
+                <p>Résultat: <span class="error"><?php echo calcule(15, '%', 0); ?></span></p>
             </div>
             
             <div class="test-case">
                 <h4>Test 3: Opération inconnue</h4>
-                <p><strong>Code:</strong> <code>calcule(15, '^', 2)</code></p>
-                <p><strong>Résultat:</strong> <span class="error"><?php echo calcule(15, '^', 2); ?></span></p>
+                <p>Code: <code>calcule(15, '^', 2)</code></p>
+                <p>Résultat: <span class="error"><?php echo calcule(15, '^', 2); ?></span></p>
             </div>
         </div>
         
         <div class="info-box">
             <h3>🔍 Spécifications de la fonction :</h3>
             <ul>
-                <li><strong>Nom :</strong> calcule()</li>
-                <li><strong>Paramètre 1 :</strong> $a (nombre) - Premier opérande</li>
-                <li><strong>Paramètre 2 :</strong> $operation (string) - Type d'opération (+, -, *, /, %)</li>
-                <li><strong>Paramètre 3 :</strong> $b (nombre) - Deuxième opérande</li>
-                <li><strong>Retour :</strong> Résultat de l'opération ou message d'erreur</li>
+                <li><p>Nom :</p> calcule()</li>
+                <li><p>Paramètre 1 :</p> $a (nombre) - Premier opérande</li>
+                <li><p>Paramètre 2 :</p> $operation (string) - Type d'opération (+, -, *, /, %)</li>
+                <li><p>Paramètre 3 :</p> $b (nombre) - Deuxième opérande</li>
+                <li><p>Retour :</p> Résultat de l'opération ou message d'erreur</li>
             </ul>
         </div>
         
         <div class="info-box">
             <h3>💡 Fonctionnalités implémentées :</h3>
             <ul>
-                <li>✅ <strong>Addition (+) :</strong> Additionne deux nombres</li>
-                <li>✅ <strong>Soustraction (-) :</strong> Soustrait le deuxième du premier</li>
-                <li>✅ <strong>Multiplication (*) :</strong> Multiplie deux nombres</li>
-                <li>✅ <strong>Division (/) :</strong> Divise le premier par le deuxième</li>
-                <li>✅ <strong>Modulo (%) :</strong> Reste de la division entière</li>
-                <li>🛡️ <strong>Gestion d'erreurs :</strong> Division/modulo par zéro, opération inconnue</li>
+                <li>✅ <p>Addition (+) :</p> Additionne deux nombres</li>
+                <li>✅ <p>Soustraction (-) :</p> Soustrait le deuxième du premier</li>
+                <li>✅ <p>Multiplication (*) :</p> Multiplie deux nombres</li>
+                <li>✅ <p>Division (/) :</p> Divise le premier par le deuxième</li>
+                <li>✅ <p>Modulo (%) :</p> Reste de la division entière</li>
+                <li>🛡️ <p>Gestion d'erreurs :</p> Division/modulo par zéro, opération inconnue</li>
             </ul>
         </div>
         
-        <div style="margin-top: 30px; text-align: center; color: #666;">
-            <p><em>Généré avec PHP - <?php echo date('d/m/Y H:i:s'); ?></em></p>
-        </div>
+        
     </div>
 </body>
 </html>

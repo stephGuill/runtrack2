@@ -58,21 +58,21 @@
         <div class="examples">
             <h4>🎯 Exemples de test :</h4>
             <div class="example-item">
-                <strong>Nombres pairs :</strong> 2, 4, 6, 8, 10, 42, 100, -4, 0
+                <p>Nombres pairs :</p> 2, 4, 6, 8, 10, 42, 100, -4, 0
             </div>
             <div class="example-item">
-                <strong>Nombres impairs :</strong> 1, 3, 5, 7, 9, 13, 99, -3, -1
+                <p>Nombres impairs :</p> 1, 3, 5, 7, 9, 13, 99, -3, -1
             </div>
         </div>
         
         <div class="info-box">
             <h3>📝 Comment ça marche :</h3>
             <ul>
-                <li><strong>Méthode GET :</strong> La valeur apparaît dans l'URL (ex: <code>?nombre=42</code>)</li>
-                <li><strong>Test de parité :</strong> On utilise l'opérateur modulo <code>%</code></li>
-                <li><strong>Nombre pair :</strong> <code>nombre % 2 == 0</code> (reste de la division par 2 est 0)</li>
-                <li><strong>Nombre impair :</strong> <code>nombre % 2 == 1</code> (reste de la division par 2 est 1)</li>
-                <li><strong>Validation :</strong> <code>is_numeric()</code> vérifie si c'est un nombre</li>
+                <li><p>Méthode GET :</p> La valeur apparaît dans l'URL (ex: <code>?nombre=42</code>)</li>
+                <li><p>Test de parité :</p> On utilise l'opérateur modulo <code>%</code></li>
+                <li><p>Nombre pair :</p> <code>nombre % 2 == 0</code> (reste de la division par 2 est 0)</li>
+                <li><p>Nombre impair :</p> <code>nombre % 2 == 1</code> (reste de la division par 2 est 1)</li>
+                <li><p>Validation :</p> <code>is_numeric()</code> vérifie si c'est un nombre</li>
             </ul>
             
             <h4>Pourquoi GET ici ?</h4>
@@ -85,9 +85,7 @@
             </ul>
         </div>
         
-        <div style="margin-top: 20px; text-align: center; color: #666;">
-            <p><em>Généré avec PHP - <?php echo date('d/m/Y H:i:s'); ?></em></p>
-        </div>
+       
     </div>
 </body>
 </html>

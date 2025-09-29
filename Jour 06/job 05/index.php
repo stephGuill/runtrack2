@@ -71,9 +71,9 @@
         
         <div class="style-info">
             <h3>📋 Description des styles</h3>
-            <p><strong>Style 1 - Moderne Bleu :</strong> Design contemporain avec dégradés bleus, ombres subtiles et animations fluides.</p>
-            <p><strong>Style 2 - Cyberpunk Sombre :</strong> Interface futuriste avec fond noir, texte vert néon et effets de grille.</p>
-            <p><strong>Style 3 - Vintage Rétro :</strong> Ambiance nostalgique avec couleurs chaudes, bordures ornementées et typographie classique.</p>
+            <p><p>Style 1 - Moderne Bleu :</p> Design contemporain avec dégradés bleus, ombres subtiles et animations fluides.</p>
+            <p><p>Style 2 - Cyberpunk Sombre :</p> Interface futuriste avec fond noir, texte vert néon et effets de grille.</p>
+            <p><p>Style 3 - Vintage Rétro :</p> Ambiance nostalgique avec couleurs chaudes, bordures ornementées et typographie classique.</p>
         </div>
         
         <div class="style-info">
@@ -87,17 +87,15 @@
         <?php if (isset($_POST['style'])): ?>
         <div class="style-info">
             <h3>🔍 Informations techniques</h3>
-            <p><strong>Fichier CSS chargé :</strong> <?php echo htmlspecialchars($style); ?>.css</p>
-            <p><strong>Méthode :</strong> POST</p>
-            <p><strong>Validation :</strong> 
+            <p><p>Fichier CSS chargé :</p> <?php echo htmlspecialchars($style); ?>.css</p>
+            <p><p>Méthode :</p> POST</p>
+            <p><p>Validation :</p> 
                 <?php echo in_array($style, ['style1', 'style2', 'style3']) ? '✅ Style valide' : '❌ Style invalide'; ?>
             </p>
         </div>
         <?php endif; ?>
         
-        <div style="margin-top: 30px; text-align: center; opacity: 0.7; font-size: 0.9em;">
-            <p><em>Généré avec PHP - <?php echo date('d/m/Y H:i:s'); ?></em></p>
-        </div>
+        
     </div>
 </body>
 </html>

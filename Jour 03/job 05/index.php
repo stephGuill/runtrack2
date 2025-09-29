@@ -56,12 +56,6 @@
         </tbody>
     </table>
 
-    <div style="margin-top: 30px; text-align: center; color: #666;">
-        <p><strong>Détails :</strong></p>
-        <p>Voyelles trouvées : <?php echo $dic["voyelles"]; ?> occurrences</p>
-        <p>Consonnes trouvées : <?php echo $dic["consonnes"]; ?> occurrences</p>
-        <p>Total des lettres : <?php echo $dic["voyelles"] + $dic["consonnes"]; ?></p>
-        <p><em>Généré avec PHP - <?php echo date('d/m/Y H:i:s'); ?></em></p>
-    </div>
+   
 </body>
 </html>

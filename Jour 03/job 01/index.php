@@ -45,8 +45,6 @@
         </tbody>
     </table>
 
-    <div style="margin-top: 30px; text-align: center; color: #666;">
-        <p><em>Généré avec PHP - <?php echo date('d/m/Y H:i:s'); ?></em></p>
-    </div>
+  
 </body>
 </html>
