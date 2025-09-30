@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jour 09 - HELLO SQL - Navigation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .container {
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+        .jobs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .job-card {
+            background: rgba(255,255,255,0.2);
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            border-left: 4px solid;
+        }
+        .job-card:hover {
+            transform: translateY(-5px);
+        }
+        .job-card.setup { border-left-color: #28a745; }
+        .job-card.data { border-left-color: #17a2b8; }
+        .job-card.query { border-left-color: #ffc107; }
+        .job-card.advanced { border-left-color: #dc3545; }
+        
+        .job-title {
+            font-size: 1.1em;
+            margin-bottom: 8px;
+            color: #ffd700;
+        }
+        .job-description {
+            font-size: 0.9em;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+        .btn {
+            background: rgba(255,255,255,0.3);
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 15px;
+            display: inline-block;
+            transition: all 0.3s ease;
+            font-size: 0.9em;
+        }
+        .btn:hover {
+            background: rgba(255,255,255,0.5);
+        }
+        .intro {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .sql-files {
+            background: rgba(255,255,255,0.15);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .file-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin: 15px 0;
+        }
+        .file-item {
+            background: rgba(255,255,255,0.2);
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="intro">
+            <h1>🗄️ Jour 09 - HELLO SQL</h1>
+            <p><strong>16 jobs SQL</strong> - De la création de base aux jointures avancées</p>
+        </div>
+
+        <h2>🚀 Démarrage Rapide</h2>
+        <div class="jobs-grid">
+            <div class="job-card setup">
+                <div class="job-title">🛠️ Configuration</div>
+                <div class="job-description">Script complet de création de base</div>
+                <a href="setup_complet.sql" class="btn">📄 setup_complet.sql</a>
+            </div>
+            
+            <div class="job-card query">
+                <div class="job-title">🌐 Interface Web</div>
+                <div class="job-description">Tests interactifs de toutes les requêtes</div>
+                <a href="index.php" class="btn">🖥️ Interface PHP</a>
+            </div>
+        </div>
+
+        <div class="sql-files">
+            <h3>📂 Fichiers SQL Créés</h3>
+            <div class="file-list">
+                <div class="file-item">job01.sql<br><small>Création base</small></div>
+                <div class="file-item">job02.sql<br><small>Insertion données</small></div>
+                <div class="file-item">job03.sql<br><small>SELECT *</small></div>
+                <div class="file-item">job04.sql<br><small>SELECT colonnes</small></div>
+                <div class="file-item">job05.sql<br><small>WHERE sexe</small></div>
+                <div class="file-item">job06.sql<br><small>LIKE "T%"</small></div>
+                <div class="file-item">job07.sql<br><small>>18 ans</small></div>
+                <div class="file-item">job08.sql<br><small>COUNT</small></div>
+                <div class="file-item">job09.sql<br><small><18 ans</small></div>
+                <div class="file-item">job10.sql<br><small>SUM superficie</small></div>
+                <div class="file-item">job11.sql<br><small>SUM capacité</small></div>
+                <div class="file-item">job12.sql<br><small>ORDER BY DESC</small></div>
+                <div class="file-item">job13.sql<br><small>AVG capacité</small></div>
+                <div class="file-item">job14.sql<br><small>BETWEEN dates</small></div>
+                <div class="file-item">job15.sql<br><small>INNER JOIN</small></div>
+                <div class="file-item">job16.sql<br><small>MAX + JOIN</small></div>
+            </div>
+        </div>
+
+        <h2>📊 Structure de la Base</h2>
+        <div class="jobs-grid">
+            <div class="job-card data">
+                <div class="job-title">👨‍🎓 Table etudiants</div>
+                <div class="job-description">7 étudiants avec id, prénom, nom, naissance, sexe, email</div>
+            </div>
+            
+            <div class="job-card data">
+                <div class="job-title">🏢 Table etage</div>
+                <div class="job-description">2 étages (RDC, R+1) avec superficie</div>
+            </div>
+            
+            <div class="job-card data">
+                <div class="job-title">🚪 Table salles</div>
+                <div class="job-description">6 salles avec capacités variées et clé étrangère</div>
+            </div>
+        </div>
+
+        <h2>🎓 Compétences SQL Couvertes</h2>
+        <div class="jobs-grid">
+            <div class="job-card query">
+                <div class="job-title">🔍 Requêtes de base</div>
+                <div class="job-description">SELECT, WHERE, LIKE, ORDER BY</div>
+            </div>
+            
+            <div class="job-card advanced">
+                <div class="job-title">📊 Fonctions d'agrégation</div>
+                <div class="job-description">COUNT, SUM, AVG, MAX</div>
+            </div>
+            
+            <div class="job-card advanced">
+                <div class="job-title">🔗 Jointures</div>
+                <div class="job-description">INNER JOIN, sous-requêtes</div>
+            </div>
+            
+            <div class="job-card setup">
+                <div class="job-title">📅 Calculs de dates</div>
+                <div class="job-description">YEAR, BETWEEN, comparaisons</div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="../" style="color: #ffd700; text-decoration: none; font-size: 1.2em;">
+                🏠 Retour au RunTrack2
+            </a>
+        </div>
+    </div>
+</body>
+</html>
