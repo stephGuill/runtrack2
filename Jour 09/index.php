@@ -191,7 +191,7 @@ function executerRequete($pdo, $sql, $titre, $description = '') {
         );
         ?>
 
-        <div style="text-align: center; margin-top: 40px;">
+        <div>
             <h3> Compétences SQL Maîtrisées</h3>
             <div class="stats">
                 <div class="stat-card"> SELECT basique</div>
