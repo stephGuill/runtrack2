@@ -22,28 +22,28 @@ $result = $mysqli->query($sql);
 </head>
 <body>
     <div class="container">
-        <h1>👶 Job 05 - Étudiants de moins de 18 ans</h1>
+        <h1> Job 05 - Étudiants de moins de 18 ans</h1>
         
         <div class="info-box">
-            <h3>📊 Fonctionnement :</h3>
-            <p>• Connexion à la base <strong>jour09</strong> avec <code>PHP</code></p>
-            <p>• Calcul d'âge précis avec <strong>YEAR() et DAYOFYEAR()</strong></p>
+            <h3> Fonctionnement :</h3>
+            <p>• Connexion à la base jour09 avec <code>PHP</code></p>
+            <p>• Calcul d'âge précis avec YEAR() et DAYOFYEAR()</p>
             <p>• Condition complexe pour gérer les anniversaires dans l'année</p>
         </div>
 
         <div class="sql-query">
-            <strong>📝 Requête SQL :</strong><br>
+            <p> Requête SQL :</p><br>
             <code><?php echo htmlspecialchars($sql); ?></code>
         </div>
 
         <?php
         // Génération du tableau HTML
-        echo genererTableauHTML($result, "👶 Étudiants mineurs (< 18 ans)");
+        echo genererTableauHTML($result, " Étudiants mineurs (< 18 ans)");
         
         // Calcul des âges exacts
         if ($result && $result->num_rows > 0) {
             echo "<div class='info-box'>";
-            echo "<strong>📊 Détails des âges :</strong><br>";
+            echo "<p> Détails des âges :</p><br>";
             
             $result->data_seek(0);
             while ($row = $result->fetch_assoc()) {
@@ -51,22 +51,22 @@ $result = $mysqli->query($sql);
                 $maintenant = new DateTime();
                 $age = $maintenant->diff($naissance)->y;
                 
-                echo "• <strong>" . htmlspecialchars($row['prenom']) . " " . htmlspecialchars($row['nom']) . "</strong> : ";
+                echo "• " . htmlspecialchars($row['prenom']) . " " . htmlspecialchars($row['nom']) . " : ";
                 echo $age . " ans (né le " . date('d/m/Y', strtotime($row['naissance'])) . ")<br>";
             }
             echo "</div>";
         } else {
             echo "<div class='info-box'>";
-            echo "<strong>ℹ️ Information :</strong><br>";
+            echo "<p> Information :</p><br>";
             echo "Aucun étudiant mineur trouvé dans la base de données";
             echo "</div>";
         }
         ?>
 
         <div class="nav-links">
-            <a href="../job04/index.php">⬅️ Job 04</a>
-            <a href="../job06/index.php">➡️ Job 06</a>
-            <a href="../">🏠 Jour 10</a>
+            <a href="../job04/index.php"> Job 04</a>
+            <a href="../job06/index.php"> Job 06</a>
+            <a href="../"> Jour 10</a>
         </div>
     </div>
 </body>

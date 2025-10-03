@@ -19,25 +19,25 @@ $result = $mysqli->query($sql);
 </head>
 <body>
     <div class="container">
-        <h1>🏢 Job 06 - Nom et capacité des salles</h1>
+        <h1> Job 06 - Nom et capacité des salles</h1>
         
         <div class="info-box">
-            <h3>📊 Fonctionnement :</h3>
-            <p>• Connexion à la base <strong>jour09</strong> avec <code>PHP</code></p>
-            <p>• Sélection spécifique des colonnes <strong>nom</strong> et <strong>capacite</strong></p>
+            <h3> Fonctionnement :</h3>
+            <p>• Connexion à la base jour09 avec <code>PHP</code></p>
+            <p>• Sélection spécifique des colonnes nom et capacite</p>
             <p>• Tri alphabétique par nom de salle</p>
         </div>
 
         <div class="sql-query">
-            <strong>📝 Requête SQL :</strong><br>
+            <p> Requête SQL :</p><br>
             <code><?php echo htmlspecialchars($sql); ?></code>
         </div>
 
         <?php
         if ($result && $result->num_rows > 0) {
             echo "<div class='stats-box'>";
-            echo "<strong>📊 Résultats :</strong> " . $result->num_rows . " salle(s) trouvée(s)<br>";
-            echo "<strong>📋 Colonnes affichées :</strong> nom, capacite<br>";
+            echo "<p> Résultats :</p> " . $result->num_rows . " salle(s) trouvée(s)<br>";
+            echo "<p> Colonnes affichées :</p> nom, capacite<br>";
             echo "</div>";
             
             // Stocker toutes les données dans un array pour éviter de réutiliser $result
@@ -56,7 +56,7 @@ $result = $mysqli->query($sql);
             
             echo "<div class='table-container'>";
             echo "<table class='data-table'>";
-            echo "<caption>🏢 Liste des salles avec leur capacité</caption>";
+            echo "<caption> Liste des salles avec leur capacité</caption>";
             echo "<thead><tr>";
             echo "<th>Rang</th>";
             echo "<th>Nom de la salle</th>";
@@ -74,22 +74,22 @@ $result = $mysqli->query($sql);
                 
                 // Catégorie selon la capacité
                 if ($capacite >= 80) {
-                    $categorie = "🏟️ Grande salle";
+                    $categorie = " Grande salle";
                     $couleur = "#4CAF50";
                 } elseif ($capacite >= 30) {
-                    $categorie = "🏛️ Salle moyenne";
+                    $categorie = " Salle moyenne";
                     $couleur = "#FF9800";
                 } elseif ($capacite >= 10) {
-                    $categorie = "🏠 Petite salle";
+                    $categorie = " Petite salle";
                     $couleur = "#2196F3";
                 } else {
-                    $categorie = "🔸 Très petite";
+                    $categorie = " Très petite";
                     $couleur = "#9C27B0";
                 }
                 
                 echo "<tr>";
                 echo "<td>$rang</td>";
-                echo "<td><strong>" . htmlspecialchars($nom) . "</strong></td>";
+                echo "<td><p>" . htmlspecialchars($nom) . "</p></td>";
                 echo "<td style='text-align: center; font-weight: bold; color: $couleur;'>$capacite pers.</td>";
                 echo "<td>$pourcentage%</td>";
                 echo "<td>$categorie</td>";
@@ -107,12 +107,12 @@ $result = $mysqli->query($sql);
                 $capaciteMoyenne = round(array_sum($capacites) / count($capacites), 1);
                 
                 echo "<div class='info-box'>";
-                echo "<strong>📈 Statistiques de capacité :</strong><br>";
-                echo "• <strong>Capacité minimale :</strong> $capaciteMin personnes<br>";
-                echo "• <strong>Capacité maximale :</strong> $capaciteMax personnes<br>";
-                echo "• <strong>Capacité moyenne :</strong> $capaciteMoyenne personnes<br>";
-                echo "• <strong>Capacité totale :</strong> $capaciteTotal personnes<br>";
-                echo "• <strong>Écart min-max :</strong> " . ($capaciteMax - $capaciteMin) . " personnes<br>";
+                echo "<p> Statistiques de capacité :</p><br>";
+                echo "• <p>Capacité minimale :</p> $capaciteMin personnes<br>";
+                echo "• <p>Capacité maximale :</p> $capaciteMax personnes<br>";
+                echo "• <p>Capacité moyenne :</p> $capaciteMoyenne personnes<br>";
+                echo "• <p>Capacité totale :</p> $capaciteTotal personnes<br>";
+                echo "• <p>Écart min-max :</p> " . ($capaciteMax - $capaciteMin) . " personnes<br>";
                 echo "</div>";
                 
                 // Répartition par catégorie
@@ -131,11 +131,11 @@ $result = $mysqli->query($sql);
                 }
                 
                 echo "<div class='info-box'>";
-                echo "<strong>🏛️ Répartition par catégorie :</strong><br>";
+                echo "<p> Répartition par catégorie :</p><br>";
                 foreach ($categories as $cat => $listeSalles) {
                     $nb = count($listeSalles);
                     $noms = implode(', ', $listeSalles);
-                    echo "• <strong>$cat :</strong> $nb salle(s) - $noms<br>";
+                    echo "• $cat : $nb salle(s) - $noms<br>";
                 }
                 echo "</div>";
             }
@@ -148,9 +148,9 @@ $result = $mysqli->query($sql);
         ?>
 
         <div class="nav-links">
-            <a href="../job05/index.php">⬅️ Job 05</a>
-            <a href="../job07/index.php">➡️ Job 07</a>
-            <a href="../">🏠 Jour 10</a>
+            <a href="../job05/index.php"> Job 05</a>
+            <a href="../job07/index.php"> Job 07</a>
+            <a href="../"> Jour 10</a>
         </div>
     </div>
 </body>

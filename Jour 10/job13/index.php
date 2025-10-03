@@ -19,26 +19,26 @@ $result = $mysqli->query($sql);
 </head>
 <body>
     <div class="container">
-        <h1>🏢 Job 13 - Jointure salles-étages</h1>
+        <h1> Job 13 - Jointure salles-étages</h1>
         
         <div class="info-box">
-            <h3>📊 Fonctionnement :</h3>
-            <p>• Connexion à la base <strong>jour09</strong> avec <code>PHP</code></p>
-            <p>• Utilisation d'un <strong>INNER JOIN</strong> entre les tables</p>
-            <p>• Liaison sur les clés : <strong>salles.id_etage = etage.id</strong></p>
+            <h3> Fonctionnement :</h3>
+            <p>• Connexion à la base jour09 avec <code>PHP</code></p>
+            <p>• Utilisation d'un INNER JOIN entre les tables</p>
+            <p>• Liaison sur les clés : salles.id_etage = etage.id</p>
             <p>• Tri par étage puis par nom de salle</p>
         </div>
 
         <div class="sql-query">
-            <strong>📝 Requête SQL :</strong><br>
+            <p> Requête SQL :</p><br>
             <code><?php echo htmlspecialchars($sql); ?></code>
         </div>
 
         <?php
         if ($result && $result->num_rows > 0) {
             echo "<div class='stats-box'>";
-            echo "<strong>📊 Résultats :</strong> " . $result->num_rows . " association(s) salle-étage<br>";
-            echo "<strong>🔗 Type de jointure :</strong> INNER JOIN<br>";
+            echo "<p> Résultats :</p> " . $result->num_rows . " association(s) salle-étage<br>";
+            echo "<p> Type de jointure :</p> INNER JOIN<br>";
             echo "</div>";
             
             // Réinitialiser le pointeur de résultat
@@ -46,7 +46,7 @@ $result = $mysqli->query($sql);
             
             echo "<div class='table-container'>";
             echo "<table class='data-table'>";
-            echo "<caption>🏢 Associations salles-étages</caption>";
+            echo "<caption> Associations salles-étages</caption>";
             echo "<thead><tr>";
             echo "<th>Rang</th>";
             echo "<th>Nom de la salle</th>";
@@ -74,24 +74,24 @@ $result = $mysqli->query($sql);
                 switch (strtolower($nomEtage)) {
                     case 'rdc':
                     case 'rez-de-chaussée':
-                        $etageIcon = "🏛️";
+                        $etageIcon = "";
                         break;
                     case '1er étage':
                     case 'premier étage':
-                        $etageIcon = "🔥";
+                        $etageIcon = "";
                         break;
                     case '2ème étage':
                     case '2e étage':
                     case 'deuxième étage':
-                        $etageIcon = "⚡";
+                        $etageIcon = "";
                         break;
                     case '3ème étage':
                     case '3e étage':
                     case 'troisième étage':
-                        $etageIcon = "🌟";
+                        $etageIcon = "";
                         break;
                     default:
-                        $etageIcon = "🏢";
+                        $etageIcon = "";
                 }
                 
                 // Indicateur de changement d'étage
@@ -103,7 +103,7 @@ $result = $mysqli->query($sql);
                 
                 echo "<tr $classEtage>";
                 echo "<td>$rang</td>";
-                echo "<td><strong>" . htmlspecialchars($nomSalle) . "</strong></td>";
+                echo "<td><p>" . htmlspecialchars($nomSalle) . "</p></td>";
                 echo "<td>" . htmlspecialchars($nomEtage) . " $etageIcon</td>";
                 echo "<td><em>" . htmlspecialchars($nomSalle) . " - " . htmlspecialchars($nomEtage) . "</em></td>";
                 echo "</tr>";
@@ -116,7 +116,7 @@ $result = $mysqli->query($sql);
             // Statistiques par étage
             if (!empty($compteurEtage)) {
                 echo "<div class='info-box'>";
-                echo "<strong>📈 Répartition des salles par étage :</strong><br>";
+                echo "<p> Répartition des salles par étage :</p><br>";
                 arsort($compteurEtage); // Trier par nombre de salles décroissant
                 
                 $totalSalles = array_sum($compteurEtage);
@@ -128,38 +128,46 @@ $result = $mysqli->query($sql);
                     switch (strtolower($etage)) {
                         case 'rdc':
                         case 'rez-de-chaussée':
-                            $etageIcon = "🏛️";
+                            $etageIcon = "";
                             break;
                         case '1er étage':
                         case 'premier étage':
-                            $etageIcon = "🔥";
+                            $etageIcon = "";
                             break;
                         case '2ème étage':
                         case '2e étage':
                         case 'deuxième étage':
-                            $etageIcon = "⚡";
+                            $etageIcon = "";
                             break;
                         case '3ème étage':
                         case '3e étage':
                         case 'troisième étage':
-                            $etageIcon = "🌟";
+                            $etageIcon = "";
                             break;
                         default:
-                            $etageIcon = "🏢";
+                            $etageIcon = "";
                     }
                     
-                    echo "• <strong>" . htmlspecialchars($etage) . " $etageIcon :</strong> $nombre salle(s) ($pourcentage%)<br>";
+                    echo "• <p>" . htmlspecialchars($etage) . " $etageIcon :</p> $nombre salle(s) ($pourcentage%)<br>";
                 }
-                echo "• <strong>Total :</strong> $totalSalles salles dans " . count($compteurEtage) . " étage(s)<br>";
+                echo "• <p>Total :</p> $totalSalles salles dans " . count($compteurEtage) . " étage(s)<br>";
                 echo "</div>";
             }
             
-            // Vérification de l'intégrité des données
+            // --- Vérification de l'intégrité des données (HACK) ---
+            // Cette section permet de vérifier la cohérence entre les données des tables 'salles' et 'etage'.
+            // On s'assure que chaque salle a bien un étage associé et on détecte les éventuelles incohérences.
+
             echo "<div class='info-box'>";
-            echo "<strong>🔍 Vérification des données :</strong><br>";
-            
-            // Compter les salles totales
+            echo "<p> Vérification des données :</p><br>";
+
+            /*
+                On ouvre une nouvelle connexion à la base de données pour ne pas perturber le curseur du premier résultat.
+                Cela permet de faire d'autres requêtes sans interférer avec la boucle principale d'affichage.
+            */
             $mysqli2 = connecterBDD();
+
+            // On compte le nombre total de salles dans la table 'salles'
             $sqlTotalSalles = "SELECT COUNT(*) as total FROM salles";
             $resultTotal = $mysqli2->query($sqlTotalSalles);
             $totalSalles = 0;
@@ -167,8 +175,8 @@ $result = $mysqli->query($sql);
                 $rowTotal = $resultTotal->fetch_assoc();
                 $totalSalles = $rowTotal['total'];
             }
-            
-            // Compter les étages totaux
+
+            // On compte le nombre total d'étages dans la table 'etage'
             $sqlTotalEtages = "SELECT COUNT(*) as total FROM etage";
             $resultEtages = $mysqli2->query($sqlTotalEtages);
             $totalEtages = 0;
@@ -176,17 +184,18 @@ $result = $mysqli->query($sql);
                 $rowEtages = $resultEtages->fetch_assoc();
                 $totalEtages = $rowEtages['total'];
             }
-            
-            echo "• <strong>Salles dans la base :</strong> $totalSalles<br>";
-            echo "• <strong>Salles avec étage :</strong> " . $result->num_rows . "<br>";
-            echo "• <strong>Étages dans la base :</strong> $totalEtages<br>";
-            echo "• <strong>Étages utilisés :</strong> " . count($compteurEtage) . "<br>";
+
+            // Affichage des statistiques de cohérence
+            echo "• <p>Salles dans la base :</p> $totalSalles<br>"; // Nombre total de salles dans la table
+            echo "• <p>Salles avec étage :</p> " . $result->num_rows . "<br>";
+            echo "• <p>Étages dans la base :</p> $totalEtages<br>";
+            echo "• <p>Étages utilisés :</p> " . count($compteurEtage) . "<br>";
             
             if ($totalSalles == $result->num_rows) {
-                echo "• <span style='color: #4CAF50;'>✅ Toutes les salles ont un étage assigné</span><br>";
+                echo "• <span style='color: #4CAF50;'> Toutes les salles ont un étage assigné</span><br>";
             } else {
                 $sallesSansEtage = $totalSalles - $result->num_rows;
-                echo "• <span style='color: #ff5722;'>⚠️ $sallesSansEtage salle(s) sans étage assigné</span><br>";
+                echo "• <span style='color: #ff5722;'> $sallesSansEtage salle(s) sans étage assigné</span><br>";
             }
             
             $mysqli2->close();
@@ -200,8 +209,8 @@ $result = $mysqli->query($sql);
         ?>
 
         <div class="nav-links">
-            <a href="../job12/index.php">⬅️ Job 12</a>
-            <a href="../">🏠 Jour 10</a>
+            <a href="../job12/index.php"> Job 12</a>
+            <a href="../"> Jour 10</a>
         </div>
     </div>
 </body>

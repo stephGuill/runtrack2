@@ -19,25 +19,25 @@ $result = $mysqli->query($sql);
 </head>
 <body>
     <div class="container">
-        <h1>🔢 Job 07 - Nombre total d'étudiants</h1>
+        <h1> Job 07 - Nombre total d'étudiants</h1>
         
         <div class="info-box">
-            <h3>📊 Fonctionnement :</h3>
-            <p>• Connexion à la base <strong>jour09</strong> avec <code>PHP</code></p>
-            <p>• Utilisation de la fonction d'agrégation <strong>COUNT(*)</strong></p>
+            <h3> Fonctionnement :</h3>
+            <p>• Connexion à la base jour09 avec <code>PHP</code></p>
+            <p>• Utilisation de la fonction d'agrégation COUNT(*)</p>
             <p>• Résultat dans une colonne nommée <code>nb_etudiants</code></p>
         </div>
 
         <div class="sql-query">
-            <strong>📝 Requête SQL :</strong><br>
+            <p> Requête SQL :</p><br>
             <code><?php echo htmlspecialchars($sql); ?></code>
         </div>
 
         <?php
         if ($result && $result->num_rows > 0) {
             echo "<div class='stats-box'>";
-            echo "<strong>📊 Résultats :</strong> Comptage des étudiants effectué<br>";
-            echo "<strong>🔍 Fonction utilisée :</strong> COUNT(*)<br>";
+            echo "<p> Résultats :</p> Comptage des étudiants effectué<br>";
+            echo "<p> Fonction utilisée :</p> COUNT(*)<br>";
             echo "</div>";
             
             // Récupérer le résultat
@@ -47,7 +47,7 @@ $result = $mysqli->query($sql);
             // Affichage du tableau
             echo "<div class='table-container'>";
             echo "<table class='data-table'>";
-            echo "<caption>🔢 Comptage des étudiants</caption>";
+            echo "<caption> Comptage des étudiants</caption>";
             echo "<thead><tr>";
             echo "<th>Nombre total d'étudiants</th>";
             echo "</tr></thead>";
@@ -60,8 +60,8 @@ $result = $mysqli->query($sql);
             
             // Affichage du résultat en grand
             echo "<div class='info-box' style='text-align: center; font-size: 1.2em;'>";
-            echo "<h3 style='color: #ffd700; font-size: 2.5em; margin: 0;'>$nbEtudiants</h3>";
-            echo "<p style='margin: 10px 0;'>étudiants inscrits dans la base de données</p>";
+            echo "<h3>$nbEtudiants</h3>";
+            echo "<p>étudiants inscrits dans la base de données</p>";
             echo "</div>";
             
             // Statistiques additionnelles
@@ -81,13 +81,13 @@ $result = $mysqli->query($sql);
                 $pourcentageFemmes = round(($nbFemmes / $nbEtudiants) * 100, 1);
                 
                 echo "<div class='info-box'>";
-                echo "<strong>👥 Répartition par sexe :</strong><br>";
-                echo "• <strong>Hommes :</strong> $nbHommes ($pourcentageHommes%)<br>";
-                echo "• <strong>Femmes :</strong> $nbFemmes ($pourcentageFemmes%)<br>";
+                echo "<p> Répartition par sexe :</p><br>";
+                echo "• <p>Hommes :</p> $nbHommes ($pourcentageHommes%)<br>";
+                echo "• <p>Femmes :</p> $nbFemmes ($pourcentageFemmes%)<br>";
                 
                 if ($rowStats['annee_min'] && $rowStats['annee_max']) {
                     $ecartGenerationnel = $rowStats['annee_max'] - $rowStats['annee_min'];
-                    echo "• <strong>Années de naissance :</strong> " . $rowStats['annee_min'] . " à " . $rowStats['annee_max'] . " (écart: $ecartGenerationnel ans)<br>";
+                    echo "• <p>Années de naissance :</p> " . $rowStats['annee_min'] . " à " . $rowStats['annee_max'] . " (écart: $ecartGenerationnel ans)<br>";
                 }
                 echo "</div>";
             }
@@ -102,13 +102,13 @@ $result = $mysqli->query($sql);
             
             if ($resultComp && $rowComp = $resultComp->fetch_assoc()) {
                 echo "<div class='info-box'>";
-                echo "<strong>📊 Comparaison avec les autres tables :</strong><br>";
-                echo "• <strong>Étudiants :</strong> $nbEtudiants<br>";
-                echo "• <strong>Salles :</strong> " . $rowComp['nb_salles'] . "<br>";
-                echo "• <strong>Étages :</strong> " . $rowComp['nb_etages'] . "<br>";
+                echo "<p> Comparaison avec les autres tables :</p><br>";
+                echo "• <p>Étudiants :</p> $nbEtudiants<br>";
+                echo "• <p>Salles :</p> " . $rowComp['nb_salles'] . "<br>";
+                echo "• <p>Étages :</p> " . $rowComp['nb_etages'] . "<br>";
                 
                 $ratioEtudiantsSalles = round($nbEtudiants / $rowComp['nb_salles'], 1);
-                echo "• <strong>Ratio étudiants/salles :</strong> $ratioEtudiantsSalles étudiants par salle<br>";
+                echo "• <p>Ratio étudiants/salles :</p> $ratioEtudiantsSalles étudiants par salle<br>";
                 echo "</div>";
             }
             $mysqli3->close();
@@ -121,9 +121,9 @@ $result = $mysqli->query($sql);
         ?>
 
         <div class="nav-links">
-            <a href="../job06/index.php">⬅️ Job 06</a>
-            <a href="../job08/index.php">➡️ Job 08</a>
-            <a href="../">🏠 Jour 10</a>
+            <a href="../job06/index.php"> Job 06</a>
+            <a href="../job08/index.php"> Job 08</a>
+            <a href="../"> Jour 10</a>
         </div>
     </div>
 </body>

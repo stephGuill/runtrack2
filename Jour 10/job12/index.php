@@ -19,26 +19,26 @@ $result = $mysqli->query($sql);
 </head>
 <body>
     <div class="container">
-        <h1>🎓 Job 12 - Étudiants nés entre 1998 et 2018</h1>
+        <h1> Job 12 - Étudiants nés entre 1998 et 2018</h1>
         
         <div class="info-box">
-            <h3>📊 Fonctionnement :</h3>
-            <p>• Connexion à la base <strong>jour09</strong> avec <code>PHP</code></p>
-            <p>• Utilisation de la fonction <strong>YEAR()</strong> et condition <strong>BETWEEN</strong></p>
+            <h3> Fonctionnement :</h3>
+            <p>• Connexion à la base jour09 avec <code>PHP</code></p>
+            <p>• Utilisation de la fonction YEAR() et condition BETWEEN</p>
             <p>• Filtrage sur une période de 20 ans (1998-2018)</p>
             <p>• Tri chronologique par date de naissance</p>
         </div>
 
         <div class="sql-query">
-            <strong>📝 Requête SQL :</strong><br>
+            <p> Requête SQL :</p><br>
             <code><?php echo htmlspecialchars($sql); ?></code>
         </div>
 
         <?php
         if ($result && $result->num_rows > 0) {
             echo "<div class='stats-box'>";
-            echo "<strong>📊 Résultats :</strong> " . $result->num_rows . " étudiant(s) trouvé(s)<br>";
-            echo "<strong>📅 Période :</strong> 1998 à 2018 (20 ans)<br>";
+            echo "<p> Résultats :</p> " . $result->num_rows . " étudiant(s) trouvé(s)<br>";
+            echo "<p> Période :</p> 1998 à 2018 (20 ans)<br>";
             echo "</div>";
             
             // Réinitialiser le pointeur de résultat
@@ -67,9 +67,9 @@ $result = $mysqli->query($sql);
                 // Icône selon la génération
                 $generationIcon = "";
                 if ($anneeNaissance >= 1998 && $anneeNaissance <= 2005) {
-                    $generationIcon = "🌟"; // Génération Z début
+                    $generationIcon = ""; // Génération Z début
                 } else {
-                    $generationIcon = "🚀"; // Génération Z fin
+                    $generationIcon = ""; // Génération Z fin
                 }
                 
                 echo "<tr>";
@@ -77,7 +77,7 @@ $result = $mysqli->query($sql);
                 echo "<td>" . htmlspecialchars($row['prenom']) . " $generationIcon</td>";
                 echo "<td>" . htmlspecialchars($row['nom']) . "</td>";
                 echo "<td>" . date('d/m/Y', strtotime($row['naissance'])) . "</td>";
-                echo "<td><strong>$anneeNaissance</strong></td>";
+                echo "<td>$anneeNaissance</td>";
                 echo "<td><span style='color: #4CAF50;'>$age ans</span></td>";
                 echo "</tr>";
                 $rang++;
@@ -106,13 +106,13 @@ $result = $mysqli->query($sql);
                 $anneeMax = max($annees);
                 
                 echo "<div class='info-box'>";
-                echo "<strong>📈 Statistiques détaillées :</strong><br>";
-                echo "• <strong>Âge minimum :</strong> $ageMin ans<br>";
-                echo "• <strong>Âge maximum :</strong> $ageMax ans<br>";
-                echo "• <strong>Âge moyen :</strong> $ageMoyen ans<br>";
-                echo "• <strong>Première naissance :</strong> $anneeMin<br>";
-                echo "• <strong>Dernière naissance :</strong> $anneeMax<br>";
-                echo "• <strong>Écart générationnel :</strong> " . ($anneeMax - $anneeMin) . " ans<br>";
+                echo "<p> Statistiques détaillées :</p><br>";
+                echo "• <p>Âge minimum :</p> $ageMin ans<br>";
+                echo "• <p>Âge maximum :</p> $ageMax ans<br>";
+                echo "• <p>Âge moyen :</p> $ageMoyen ans<br>";
+                echo "• <p>Première naissance :</p> $anneeMin<br>";
+                echo "• <p>Dernière naissance :</p> $anneeMax<br>";
+                echo "• <p>Écart générationnel :</p> " . ($anneeMax - $anneeMin) . " ans<br>";
                 echo "</div>";
                 
                 // Répartition par année
@@ -120,10 +120,10 @@ $result = $mysqli->query($sql);
                 ksort($repartition);
                 
                 echo "<div class='info-box'>";
-                echo "<strong>📊 Répartition par année de naissance :</strong><br>";
+                echo "<p> Répartition par année de naissance :</p><br>";
                 foreach ($repartition as $annee => $nombre) {
                     $pourcentage = round(($nombre / count($annees)) * 100, 1);
-                    echo "• <strong>$annee :</strong> $nombre étudiant(s) ($pourcentage%)<br>";
+                    echo "• $annee : $nombre étudiant(s) ($pourcentage%)<br>";
                 }
                 echo "</div>";
             }
@@ -136,9 +136,9 @@ $result = $mysqli->query($sql);
         ?>
 
         <div class="nav-links">
-            <a href="../job11/index.php">⬅️ Job 11</a>
-            <a href="../job13/index.php">➡️ Job 13</a>
-            <a href="../">🏠 Jour 10</a>
+            <a href="../job11/index.php"> Job 11</a>
+            <a href="../job13/index.php"> Job 13</a>
+            <a href="../"> Jour 10</a>
         </div>
     </div>
 </body>

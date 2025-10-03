@@ -19,17 +19,17 @@ $result = $mysqli->query($sql);
 </head>
 <body>
     <div class="container">
-        <h1>📊 Job 11 - Capacité moyenne des salles</h1>
+        <h1> Job 11 - Capacité moyenne des salles</h1>
         
         <div class="info-box">
-            <h3>📊 Fonctionnement :</h3>
-            <p>• Connexion à la base <strong>jour09</strong> avec <code>PHP</code></p>
-            <p>• Utilisation de la fonction d'agrégation <strong>AVG()</strong></p>
+            <h3> Fonctionnement :</h3>
+            <p>• Connexion à la base jour09 avec <code>PHP</code></p>
+            <p>• Utilisation de la fonction d'agrégation AVG()</p>
             <p>• Calcul automatique de la moyenne des capacités</p>
         </div>
 
         <div class="sql-query">
-            <strong>📝 Requête SQL :</strong><br>
+            <p> Requête SQL :</p><br>
             <code><?php echo htmlspecialchars($sql); ?></code>
         </div>
 
@@ -42,11 +42,11 @@ $result = $mysqli->query($sql);
             // Réinitialiser le pointeur pour genererTableauHTML
             $result->data_seek(0);
             
-            echo genererTableauHTML($result, "📊 Capacité moyenne des salles");
+            echo genererTableauHTML($result, " Capacité moyenne des salles");
             
             echo "<div class='info-box' style='text-align: center; font-size: 1.2em;'>";
-            echo "<h3 style='color: #ffd700; font-size: 2em; margin: 0;'>$moyenne personnes</h3>";
-            echo "<p style='margin: 10px 0;'>capacité moyenne par salle</p>";
+            echo "<h3>$moyenne personnes</h3>";
+            echo "<p>capacité moyenne par salle</p>";
             echo "</div>";
             
             // Comparaison avec chaque salle seulement si moyenne > 0
@@ -57,23 +57,23 @@ $result = $mysqli->query($sql);
                 
                 if ($resultSalles && $resultSalles->num_rows > 0) {
                     echo "<div class='info-box'>";
-                    echo "<strong>📈 Comparaison avec la moyenne :</strong><br>";
+                    echo "<p> Comparaison avec la moyenne :</p><br>";
                     while ($rowSalle = $resultSalles->fetch_assoc()) {
                         $capacite = $rowSalle['capacite'];
                         $ecart = $capacite - $moyenne;
                         
                         if ($ecart > 0) {
-                            $status = "🔺 +" . round($ecart, 1) . " (au-dessus)";
+                            $status = " +" . round($ecart, 1) . " (au-dessus)";
                             $color = "color: #4CAF50;";
                         } elseif ($ecart < 0) {
-                            $status = "🔻 " . round($ecart, 1) . " (en-dessous)";
+                            $status = " " . round($ecart, 1) . " (en-dessous)";
                             $color = "color: #ff5722;";
                         } else {
-                            $status = "🎯 exactement la moyenne";
+                            $status = " exactement la moyenne";
                             $color = "color: #ffd700;";
                         }
                         
-                        echo "• <strong>" . htmlspecialchars($rowSalle['nom']) . "</strong> : ";
+                        echo "• <p>" . htmlspecialchars($rowSalle['nom']) . "</p> : ";
                         echo $capacite . " pers. <span style='$color'>$status</span><br>";
                     }
                     echo "</div>";
@@ -81,7 +81,7 @@ $result = $mysqli->query($sql);
                 $mysqli2->close();
             } else {
                 echo "<div class='info-box'>";
-                echo "<strong>⚠️ Attention :</strong> Aucune capacité moyenne calculée.<br>";
+                echo "<p> Attention :</p> Aucune capacité moyenne calculée.<br>";
                 echo "</div>";
             }
             
@@ -93,9 +93,9 @@ $result = $mysqli->query($sql);
         ?>
 
         <div class="nav-links">
-            <a href="../job10/index.php">⬅️ Job 10</a>
-            <a href="../job12/index.php">➡️ Job 12</a>
-            <a href="../">🏠 Jour 10</a>
+            <a href="../job10/index.php"> Job 10</a>
+            <a href="../job12/index.php"> Job 12</a>
+            <a href="../"> Jour 10</a>
         </div>
     </div>
 </body>

@@ -19,29 +19,29 @@ $result = $mysqli->query($sql);
 </head>
 <body>
     <div class="container">
-        <h1>🎯 Job 04 - Prénoms commençant par "T"</h1>
+        <h1> Job 04 - Prénoms commençant par "T"</h1>
         
         <div class="info-box">
-            <h3>📊 Fonctionnement :</h3>
-            <p>• Connexion à la base <strong>jour09</strong> avec <code>PHP</code></p>
-            <p>• Utilisation de <strong>LIKE 'T%'</strong> pour pattern matching</p>
+            <h3> Fonctionnement :</h3>
+            <p>• Connexion à la base jour09 avec <code>PHP</code></p>
+            <p>• Utilisation de LIKE 'T%' pour pattern matching</p>
             <p>• Récupération de toutes les informations des étudiants concernés</p>
         </div>
 
         <div class="sql-query">
-            <strong>📝 Requête SQL :</strong><br>
+            <p> Requête SQL :</p><br>
             <code><?php echo htmlspecialchars($sql); ?></code>
         </div>
 
         <?php
         // Génération du tableau HTML
-        echo genererTableauHTML($result, "🎯 Étudiants dont le prénom commence par 'T'");
+        echo genererTableauHTML($result, " Étudiants dont le prénom commence par 'T'");
         
         // Statistiques et détails
         if ($result && $result->num_rows > 0) {
             echo "<div class='info-box'>";
-            echo "<strong>📊 Statistiques :</strong><br>";
-            echo "• Nombre d'étudiants trouvés : <strong>" . $result->num_rows . "</strong><br>";
+            echo " Statistiques :<br>";
+            echo "• Nombre d'étudiants trouvés : " . $result->num_rows . "<br>";
             
             // Liste des prénoms trouvés
             $result->data_seek(0);
@@ -50,20 +50,20 @@ $result = $mysqli->query($sql);
                 $prenoms[] = $row['prenom'];
             }
             
-            echo "• Prénoms trouvés : <strong>" . implode(', ', $prenoms) . "</strong>";
+            echo "• Prénoms trouvés : " . implode(', ', $prenoms) . "";
             echo "</div>";
         } else {
             echo "<div class='info-box'>";
-            echo "<strong>ℹ️ Information :</strong><br>";
+            echo " Information :<br>";
             echo "Aucun étudiant trouvé avec un prénom commençant par 'T'";
             echo "</div>";
         }
         ?>
 
         <div class="nav-links">
-            <a href="../job03/index.php">⬅️ Job 03</a>
-            <a href="../job05/index.php">➡️ Job 05</a>
-            <a href="../">🏠 Jour 10</a>
+            <a href="../job03/index.php"> Job 03</a>
+            <a href="../job05/index.php"> Job 05</a>
+            <a href="../"> Jour 10</a>
         </div>
     </div>
 </body>

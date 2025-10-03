@@ -19,37 +19,37 @@ $result = $mysqli->query($sql);
 </head>
 <body>
     <div class="container">
-        <h1>📋 Job 01 - Tous les étudiants avec MySQLi</h1>
+        <h1> Job 01 - Tous les étudiants avec MySQLi</h1>
         
         <div class="info-box">
-            <h3>📊 Fonctionnement :</h3>
-            <p>• Connexion à la base <strong>jour09</strong> avec <code>mysqli</code></p>
-            <p>• Récupération de <strong>tous les champs</strong> de la table étudiants</p>
+            <h3> Fonctionnement :</h3>
+            <p>• Connexion à la base jour09 avec <code>mysqli</code></p>
+            <p>• Récupération de tous les champs de la table étudiants</p>
             <p>• Affichage dans un tableau HTML structuré avec thead et tbody</p>
         </div>
 
         <div class="sql-query">
-            <strong>📝 Requête SQL :</strong><br>
+            <p> Requête SQL :</p><br>
             <code><?php echo htmlspecialchars($sql); ?></code>
         </div>
 
         <?php
         // Génération du tableau HTML
-        echo genererTableauHTML($result, "👨‍🎓 Liste complète des étudiants");
+        echo genererTableauHTML($result, " Liste complète des étudiants");
         
         // Statistiques
         if ($result && $result->num_rows > 0) {
             echo "<div class='info-box'>";
-            echo "<strong>📊 Statistiques :</strong><br>";
-            echo "• Nombre total d'étudiants : <strong>" . $result->num_rows . "</strong><br>";
-            echo "• Nombre de colonnes : <strong>" . $result->field_count . "</strong>";
+            echo " Statistiques :<br>";
+            echo "• Nombre total d'étudiants : " . $result->num_rows . "<br>";
+            echo "• Nombre de colonnes : " . $result->field_count . "<br>";
             echo "</div>";
         }
         ?>
 
         <div class="nav-links">
-            <a href="../job02/index.php">➡️ Job 02</a>
-            <a href="../">🏠 Jour 10</a>
+            <a href="../job02/index.php"> Job 02</a>
+            <a href="../"> Jour 10</a>
         </div>
     </div>
 </body>

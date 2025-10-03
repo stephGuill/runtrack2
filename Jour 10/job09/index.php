@@ -19,31 +19,31 @@ $result = $mysqli->query($sql);
 </head>
 <body>
     <div class="container">
-        <h1>📊 Job 09 - Salles par capacité décroissante</h1>
+        <h1> Job 09 - Salles par capacité décroissante</h1>
         
         <div class="info-box">
-            <h3>📊 Fonctionnement :</h3>
-            <p>• Connexion à la base <strong>jour09</strong> avec <code>PHP</code></p>
-            <p>• Tri avec <strong>ORDER BY capacite DESC</strong></p>
+            <h3> Fonctionnement :</h3>
+            <p>• Connexion à la base jour09 avec <code>PHP</code></p>
+            <p>• Tri avec ORDER BY capacite DESC</p>
             <p>• Affichage de toutes les informations des salles</p>
         </div>
 
         <div class="sql-query">
-            <strong>📝 Requête SQL :</strong><br>
+            <p> Requête SQL :</p><br>
             <code><?php echo htmlspecialchars($sql); ?></code>
         </div>
 
         <?php
-        echo genererTableauHTML($result, "📊 Salles triées par capacité (plus grande → plus petite)");
+        echo genererTableauHTML($result, " Salles triées par capacité (plus grande → plus petite)");
         
         if ($result && $result->num_rows > 0) {
             echo "<div class='info-box'>";
-            echo "<strong>🏆 Classement des salles :</strong><br>";
+            echo "<p> Classement des salles :</p><br>";
             $result->data_seek(0);
             $rang = 1;
             while ($row = $result->fetch_assoc()) {
                 $emoji = ($rang == 1) ? "🥇" : (($rang == 2) ? "🥈" : (($rang == 3) ? "🥉" : "🏅"));
-                echo "$emoji <strong>$rang. " . htmlspecialchars($row['nom']) . "</strong> : " . $row['capacite'] . " personnes<br>";
+                echo "$emoji $rang. " . htmlspecialchars($row['nom']) . ":" . $row['capacite'] . " personnes<br>";
                 $rang++;
             }
             echo "</div>";
@@ -51,9 +51,9 @@ $result = $mysqli->query($sql);
         ?>
 
         <div class="nav-links">
-            <a href="../job08/index.php">⬅️ Job 08</a>
-            <a href="../job10/index.php">➡️ Job 10</a>
-            <a href="../">🏠 Jour 10</a>
+            <a href="../job08/index.php"> Job 08</a>
+            <a href="../job10/index.php"> Job 10</a>
+            <a href="../"> Jour 10</a>
         </div>
     </div>
 </body>

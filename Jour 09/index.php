@@ -204,6 +204,12 @@ function executerRequete($pdo, $sql, $titre, $description = '') {
                 <div class="stat-card"> Calculs dates</div>
             </div>
         </div>
+        <div class="pagination" style="margin-top:2em;text-align:center;">
+            <!-- Le lien ci-dessous a été modifié pour pointer directement vers le premier job du Jour 08 -->
+            <a href="../Jour 08/job01/index.php" class="pagination-link">&laquo; Jour 08</a>
+            <span class="pagination-current">Jour 09</span>
+            <a href="../Jour 10/index.php" class="pagination-link">Jour 10 &raquo;</a>
+        </div>
     </div>
 </body>
 </html>

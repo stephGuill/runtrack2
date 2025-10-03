@@ -19,23 +19,23 @@ $result = $mysqli->query($sql);
 </head>
 <body>
     <div class="container">
-        <h1>🚪 Job 02 - Nom et capacité des salles</h1>
+        <h1> Job 02 - Nom et capacité des salles</h1>
         
         <div class="info-box">
-            <h3>📊 Fonctionnement :</h3>
-            <p>• Connexion à la base <strong>jour09</strong> avec <code>mysqli</code></p>
-            <p>• Sélection <strong>spécifique</strong> des colonnes nom et capacité</p>
+            <h3> Fonctionnement :</h3>
+            <p>• Connexion à la base jour09 avec <code>mysqli</code></p>
+            <p>• Sélection spécifique des colonnes nom et capacité</p>
             <p>• Affichage optimisé pour la consultation des capacités</p>
         </div>
 
         <div class="sql-query">
-            <strong>📝 Requête SQL :</strong><br>
+            <p> Requête SQL :</p><br>
             <code><?php echo htmlspecialchars($sql); ?></code>
         </div>
 
         <?php
         // Génération du tableau HTML
-        echo genererTableauHTML($result, "🏢 Salles et leurs capacités");
+        echo genererTableauHTML($result, " Salles et leurs capacités");
         
         // Calcul de la capacité totale
         if ($result && $result->num_rows > 0) {
@@ -47,18 +47,18 @@ $result = $mysqli->query($sql);
             }
             
             echo "<div class='info-box'>";
-            echo "<strong>📊 Statistiques :</strong><br>";
-            echo "• Nombre de salles : <strong>" . $result->num_rows . "</strong><br>";
-            echo "• Capacité totale : <strong>" . $capaciteTotal . " personnes</strong><br>";
-            echo "• Capacité moyenne : <strong>" . round($capaciteTotal / $result->num_rows, 1) . " personnes</strong>";
+            echo " Statistiques :<br>";
+            echo "• Nombre de salles : " . $result->num_rows . "<br>";
+            echo "• Capacité totale : " . $capaciteTotal . " personnes<br>";
+            echo "• Capacité moyenne : " . round($capaciteTotal / $result->num_rows, 1) . " personnes";
             echo "</div>";
         }
         ?>
 
         <div class="nav-links">
-            <a href="../job01/index.php">⬅️ Job 01</a>
-            <a href="../job03/index.php">➡️ Job 03</a>
-            <a href="../">🏠 Jour 10</a>
+            <a href="../job01/index.php"> Job 01</a>
+            <a href="../job03/index.php"> Job 03</a>
+            <a href="../"> Jour 10</a>
         </div>
     </div>
 </body>

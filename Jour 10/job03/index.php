@@ -19,29 +19,29 @@ $result = $mysqli->query($sql);
 </head>
 <body>
     <div class="container">
-        <h1>👩 Job 03 - Étudiantes de sexe féminin</h1>
+        <h1> Job 03 - Étudiantes de sexe féminin</h1>
         
         <div class="info-box">
-            <h3>📊 Fonctionnement :</h3>
-            <p>• Connexion à la base <strong>jour09</strong> avec <code>mysqli</code></p>
-            <p>• Filtrage avec <strong>WHERE sexe = 'Femme'</strong></p>
+            <h3> Fonctionnement :</h3>
+            <p>• Connexion à la base jour09 avec <code>mysqli</code></p>
+            <p>• Filtrage avec WHERE sexe = 'Femme'</p>
             <p>• Sélection des champs prénom, nom et date de naissance</p>
         </div>
 
         <div class="sql-query">
-            <strong>📝 Requête SQL :</strong><br>
+            <p> Requête SQL :</p><br>
             <code><?php echo htmlspecialchars($sql); ?></code>
         </div>
 
         <?php
         // Génération du tableau HTML
-        echo genererTableauHTML($result, "👩‍🎓 Étudiantes féminines");
+        echo genererTableauHTML($result, " Étudiantes féminines");
         
         // Statistiques
         if ($result && $result->num_rows > 0) {
             echo "<div class='info-box'>";
-            echo "<strong>📊 Statistiques :</strong><br>";
-            echo "• Nombre d'étudiantes : <strong>" . $result->num_rows . "</strong><br>";
+            echo " Statistiques :<br>";
+            echo "• Nombre d'étudiantes : " . $result->num_rows . "<br>";
             
             // Calcul des âges
             $result->data_seek(0);
@@ -54,18 +54,18 @@ $result = $mysqli->query($sql);
             }
             
             if (!empty($ages)) {
-                echo "• Âge moyen : <strong>" . round(array_sum($ages) / count($ages), 1) . " ans</strong><br>";
-                echo "• Âge minimum : <strong>" . min($ages) . " ans</strong><br>";
-                echo "• Âge maximum : <strong>" . max($ages) . " ans</strong>";
+                echo "• Âge moyen : " . round(array_sum($ages) / count($ages), 1) . " ans<br>";
+                echo "• Âge minimum : " . min($ages) . " ans<br>";
+                echo "• Âge maximum : " . max($ages) . " ans";
             }
             echo "</div>";
         }
         ?>
 
         <div class="nav-links">
-            <a href="../job02/index.php">⬅️ Job 02</a>
-            <a href="../job04/index.php">➡️ Job 04</a>
-            <a href="../">🏠 Jour 10</a>
+            <a href="../job02/index.php"> Job 02</a>
+            <a href="../job04/index.php"> Job 04</a>
+            <a href="../"> Jour 10</a>
         </div>
     </div>
 </body>
